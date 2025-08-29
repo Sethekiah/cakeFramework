@@ -6,13 +6,14 @@ TODO:
 ]]
 
 -- Source Files
-units = "src/*.cpp"
+units = "src/sandbox/*.cpp"
 components = "src/*.cppm"
 
 set_toolchains("clang")
 set_languages("c++latest")
 set_runtimes("c++_static")
 set_config("sdk", "/usr/lib/llvm-20/")
+
 
 -- Latest SFML version
 add_requires("sfml 3.0.0")
@@ -22,9 +23,8 @@ target("std")
 	set_kind("static")
 	add_files("/usr/lib/llvm-20/share/libc++/v1/*.cppm", { public = true })
 
-target("a")
-	set_kind("binary")
-	set_extension(".out")
+target("cakeFramework")
+	set_kind("static")
 	
 	-- Add dependency on std module
 	add_deps("std")
@@ -32,8 +32,17 @@ target("a")
 	-- Add SFML package
 	add_packages("sfml")
 
-	-- Add all source files
-	add_files(units)
-	add_files(components)
+	-- Add all source files making them public
+	add_files(components, { public = true })
 
--- set_policy("build.c++.modules", true)
+target("a")
+	set_kind("binary")
+	set_extension(".out")
+
+	add_deps("std")
+
+	add_deps("cakeFramework")
+
+	add_packages("sfml")
+
+	add_files(units)
