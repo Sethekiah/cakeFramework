@@ -1,10 +1,12 @@
-export module time;
+// Copyright 2025 Caleb Whitmer
+module;
 
-/* >>------------------------ Forward Declarations ------------------------<< */
+#include <SFML/Graphics.hpp>
 
+export module cakeFramework:time;
+
+// Forward declaration of Time class
 export class Time;
-
-/* >>----------------------------- Definitions ----------------------------<< */
 
 class Time {
 
