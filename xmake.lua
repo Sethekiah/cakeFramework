@@ -16,7 +16,8 @@ set_config("sdk", "/usr/lib/llvm-20/")
 
 
 -- Latest SFML version
-add_requires("sfml 3.0.0")
+add_requires("sfml 3.0.1")
+-- add_requires("sfml")
 
 -- Build std module
 target("std")

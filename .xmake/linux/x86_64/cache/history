@@ -1,0 +1,14 @@
+{
+    cmdlines = {
+        "xmake f --toolchain=clang -c",
+        "xmake ",
+        "xmake run",
+        "xmake ",
+        "xmake run -q",
+        "xmake ",
+        "xmake run -q",
+        "xmake ",
+        "xmake run -q",
+        "xmake clean"
+    }
+}

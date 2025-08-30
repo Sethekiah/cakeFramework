@@ -1,9 +1,6 @@
 /*
  * TODO:
  * 
- * - Possibly split this into two modules interface partitions
- * 
- * - Add a root singleton class to handle system calls over the architecture
  * - Add additional functions under Entity class
  *   - getComponentInParent
  *   - getComponentsInChildren
@@ -14,9 +11,12 @@
 
 // Copyright 2025 Caleb Whitmer
 export module cakeFramework:entity;
-
 import :component;
+
 import std;
+
+// Root Entity is saved on instantiation and used to update everything 
+// 
 
 /**
  * @brief      Entity instances are empty by default. Developers can add
@@ -25,6 +25,10 @@ import std;
  *             
  */
 class Entity final {
+    friend void refresh__(void);
+
+    inline static Entity* root_ = nullptr;
+
     Entity* parent_ = nullptr;
     std::unordered_set<Entity*> children_;
 
@@ -33,7 +37,7 @@ class Entity final {
     /**
      * @brief      Update system
      */
-    void update_() {
+    void update_(void) {
         // Call the update function across all Components which belong to the
         // current Entity
         std::for_each(components_.begin(), components_.end(), [](auto& it){
@@ -49,7 +53,7 @@ class Entity final {
     /**
      * @brief      Physics Update system
      */
-    void physicsUpdate_() {
+    void physicsUpdate_(void) {
         // Call the update function across all Components which belong to the
         // current Entity
         std::for_each(components_.begin(), components_.end(), [](auto& it){
@@ -65,7 +69,7 @@ class Entity final {
     /**
      * @brief      Graphics Update system
      */
-    void graphicsUpdate_() {
+    void graphicsUpdate_(void) {
         // Call the update function across all Components which belong to the
         // current Entity
         std::for_each(components_.begin(), components_.end(), [](auto& it){
@@ -80,9 +84,15 @@ class Entity final {
 
  public:
     /**
-     * @brief      Constructs a new instance without a parent
+     * @brief      Constructs a new instance without a parent (root node)
      */
-    Entity(void) {}
+    Entity(void) {
+        // Set the root entity pointer to point to this instance.
+        if (nullptr == root_)
+            root_ = this;
+        else
+            throw std::runtime_error("Entity::Entity(void) ~~~ Dangling Entity: No more than one root Entity is allowed. Try giving this Entity a parent.");
+    }
 
     /**
      * @brief      Constructs a new instance being assigned as a child of
@@ -91,26 +101,6 @@ class Entity final {
      * @param      parent  The parent which will "adopt" the new instance
      */
     Entity(Entity* parent) {
-        setParent(parent);
-    }
-
-    /**
-     * @brief      Destroys the object and deallocates all memory stored within
-     */
-    ~Entity() {
-        // Delete all memory allocations stored in the Components map
-        std::for_each(components_.begin(), components_.end(), [](auto& it){
-            delete it.second;
-            it.second = nullptr;
-        });
-    }
-
-    /**
-     * @brief      Set or replace the parent of the instance
-     *
-     * @param      parent  The new parent
-     */
-    void setParent(Entity* parent) {
         if (parent_ == parent or nullptr == parent)
             return;
 
@@ -126,11 +116,22 @@ class Entity final {
     }
 
     /**
+     * @brief      Destroys the object and deallocates all memory stored within
+     */
+    ~Entity(void) {
+        // Delete all memory allocations stored in the Components map
+        std::for_each(components_.begin(), components_.end(), [](auto& it){
+            delete it.second;
+            it.second = nullptr;
+        });
+    }
+
+    /**
      * @brief      Get the parent of the current instance
      *
      * @return     The parent if it exists, null otherwise
      */
-    Entity* getParent() {
+    Entity* getParent(void) {
         return parent_;
     }
 
@@ -142,7 +143,7 @@ class Entity final {
      * @return     A pointer to the component if it was added, null otherwise
      */
     template<class T>
-    T* addComponent() {
+    T* addComponent(void) {
         // Emplace a new component using its type as the key
         auto insertionState = components_.emplace(std::make_pair(
             static_cast<std::type_index>(typeid(T)), new T()));
@@ -164,7 +165,7 @@ class Entity final {
      * @tparam     T     The component type
      */
     template<class T>
-    void removeComponent() {
+    void removeComponent(void) {
         // Find the location of the component in the map using the typeid as the
         // index
         auto itToComponent = components_.find(typeid(T));
@@ -189,7 +190,7 @@ class Entity final {
      * @return     A pointer to the component if it exists, null otherwise
      */
     template<class T>
-    T* getComponent() {
+    T* getComponent(void) {
         // Find the location of the component in the map using the typeid as the
         // index
         auto itToComponent = components_.find(typeid(T));
