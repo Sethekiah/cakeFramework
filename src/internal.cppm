@@ -6,12 +6,18 @@ import :time;
 
 import std;
 
-// Refresh all systems; should be called once per frame
-void refresh__(void) {
-	Time::refresh_();
-	
-	Entity::root_->update_();
-	if (Time::phyiscsFlag_)
-		Entity::root_->physicsUpdate_();
-	Entity::root_->graphicsUpdate_();
-}
+struct Internal {
+	// Refresh all systems; should be called once per frame
+	static void refresh(void) {
+		Time::refresh_();
+		
+		Entity::root_->update_();
+		if (Time::phyiscsFlag_)
+			Entity::root_->physicsUpdate_();
+		Entity::root_->graphicsUpdate_();
+	}
+
+	static void end(void) {
+		Entity::root_->onGameEnd_();
+	}
+};

@@ -1,10 +1,10 @@
 {
-    options = {
-        clean = true,
-        toolchain = "clang"
-    },
+    recheck = false,
     mtimes = {
         ["xmake.lua"] = 1756698130
     },
-    recheck = false
+    options = {
+        clean = true,
+        toolchain = "clang"
+    }
 }

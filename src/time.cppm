@@ -9,6 +9,8 @@ export module cakeFramework:time;
 export class Time;
 
 class Time {
+	friend class Internal;
+
 	inline static float deltaTime_ = 0;
 	inline static float elapsedTime_ = 0;
 	inline static float physicsDeltaTime_ = 0;
@@ -36,8 +38,6 @@ class Time {
  	}
 
  public:
-	friend void refresh__(void);
-
  	inline constexpr static const float& deltaTime = deltaTime_;
  	inline constexpr static const float& elapsedTime = elapsedTime_;
  	inline constexpr static const float& physicsDeltaTime = physicsDeltaTime_;

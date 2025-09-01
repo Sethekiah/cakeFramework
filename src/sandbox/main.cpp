@@ -1,3 +1,9 @@
+/*
+ * TODO:
+ * 
+ * - Start work on transform and renderer Components
+ */
+
 // Copyright 2025 Caleb Whitmer
 
 #include <SFML/Graphics.hpp>
@@ -9,13 +15,9 @@ class AComp final : public Component {
  public:
  	std::string name = "";
 
- 	void test() {
- 		std::cout << name << std::endl;
- 	}
-
  private:
  	void start() {
-		std::cout << "A start!" << std::endl;
+		std::cout << name << std::endl;
 	}
 
 	void update() {
@@ -28,52 +30,43 @@ class AComp final : public Component {
 	void graphicsUpdate() {
 
 	}
+
+	void onGameEnd() {
+		std::cout << "Bye Bye!" << std::endl;
+	}
+
+	void onDestroy() {
+		std::cout << "Killed!" << std::endl;
+	}
 };
 
 int main(int argc, char const *argv[])
 {
 	// sf::RenderWindow window(sf::VideoMode({800, 600}), "cakeFramework", sf::Style::Close);
 
-
 	Entity a;
-	
+	a.addComponent<AComp>()->name = "Caleb";	
+
 	Entity b(a);
-	b.addComponent<AComp>()->name = "b";
+	b.addComponent<AComp>()->name = "eee";
+
+	// a.removeAllComponents();
+
+	Game::loop([&](){
+		destroy(b);
+		Game::end();
+		// if (!window.isOpen())
+		// 	Game::end();
 	
-	Entity c(a);
-	c.addComponent<AComp>()->name = "c";
-
-	Entity d(a);
-	d.addComponent<AComp>()->name = "d";
-
-	destroy(b);
-
-	if (auto f = a.getComponentsInChildren<AComp>()) {
-		for (auto& i : *f)
-			i->test();
-		// std::cout << "Yes!" << std::endl;
-	}
-	
-	// if (auto f = b.getComponent<AComp>())
-	// 	f->test();
-
-
-
-	// Game::loop([&](){
-	// 	Game::end();
-
-	// 	if (!window.isOpen())
-	// 		Game::end();
-	
-	// 	while (const std::optional event = window.pollEvent()) {
-	// 		if (event->is<sf::Event::Closed>())
-	// 			window.close();
-	// 	}
+		// while (const std::optional event = window.pollEvent()) {
+		// 	if (event->is<sf::Event::Closed>())
+		// 		window.close();
+		// }
 	
 
-	// 	window.clear();
-	// 	window.display();
-	// });
+		// window.clear();
+		// window.display();
+	});
 
 	return 0;
 }

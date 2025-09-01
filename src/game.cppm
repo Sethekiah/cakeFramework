@@ -28,7 +28,7 @@ class Game {
 	 */
 	static void loop(std::function<void()> body) {
 		while (gameActive__) {
-			refresh__();
+			Internal::refresh();
 
 			body();
 		}
@@ -40,6 +40,7 @@ class Game {
  	 *             frame.
  	 */
  	static void end(void) {
+ 		Internal::end();
  		gameActive__ = 0;
  	}
 };

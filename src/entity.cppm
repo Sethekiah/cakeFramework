@@ -1,9 +1,10 @@
 /*
  * TODO:
  *
- * - Game::end system call
- * - Rename Start to Awake & create proper Start call to be called on the frame
- *   when it is enabled.
+ * - OnEnable
+ * - OnDisable
+ * - OnEntityEnable
+ * - OnEntityDisable
  */
 
 // Copyright 2025 Caleb Whitmer
@@ -19,7 +20,10 @@ import std;
  *             
  */
 class Entity final {
-    friend void refresh__(void);
+    friend class Internal;
+    // friend void refresh__(void);
+    // friend void end__(void);
+
     friend void destroy(Entity& instance);
     friend class Entity_Root_Manager;
 
@@ -50,6 +54,13 @@ class Entity final {
         // Call the update function across all Components which belong to the
         // current Entity
         std::for_each(components_.begin(), components_.end(), [](auto& it){
+            // If the Start call of the current Component has not been called
+            // yet, call it
+            if (!(it.second->didStart_)) {
+                it.second->start_();
+                it.second->didStart_ = 1;
+            }
+
             it.second->update_();
         });
 
@@ -88,6 +99,35 @@ class Entity final {
         // Call the update function across all children of the current Entity
         std::for_each(children_.begin(), children_.end(), [](auto& it){
             it->graphicsUpdate_();
+        });
+    }
+
+    /**
+     * @brief      onGameEnd system
+     */
+    void onGameEnd_(void) {
+        // Call the onGameEnd function across all Components which belong to the
+        // current Entity
+        std::for_each(components_.begin(), components_.end(), [](auto& it){
+            it.second->onGameEnd_();
+        });
+
+        // Call the onGameEnd function across all children of the current Entity
+        std::for_each(children_.begin(), children_.end(), [](auto& it){
+            it->onGameEnd_();
+        });
+    }
+
+    void onDestroy_(void) {
+        // Call the onDestroy function across all Components which belong to the
+        // current Entity
+        std::for_each(components_.begin(), components_.end(), [](auto& it){
+            it.second->onDestroy_();
+        });
+
+        // Call the onDestroy function across all children of the current Entity
+        std::for_each(children_.begin(), children_.end(), [](auto& it){
+            it->onDestroy_();
         });
     }
 
@@ -135,10 +175,11 @@ class Entity final {
      * @brief      Delete all memory allocations stored in the Components map.
      */
     void removeAllComponents() {
-        std::for_each(components_.begin(), components_.end(), [](auto& it){
-            delete it.second;
-            it.second = nullptr;
-        });
+        for (auto it = components_.begin(); it != components_.end(); it++) {
+            delete it->second;
+            it->second = nullptr;
+        }
+        components_.clear();
     }
 
     /**
@@ -161,8 +202,9 @@ class Entity final {
         // Set the Entity pointer of the Component to point to this instance
         insertionState.first->second->entity = this;
 
-        // Call the start function of the Component
-        insertionState.first->second->start_();
+        // Call the awake function of the Component
+        insertionState.first->second->awake_();
+        insertionState.first->second->didAwake_ = 1;
 
         // Otherwise return a pointer to the new component
         return static_cast<T*>(insertionState.first->second);
@@ -268,12 +310,12 @@ class Entity final {
  * @param      instance  The instance
  */
 void destroy(Entity& instance) {
-    // Pull the specified instance out of the Entity tree. 
-    if (instance.parent_ != nullptr)
-        instance.parent_->children_.erase(&instance);
+    // Call the onDestroy function before the object is destroyed
+    instance.onDestroy_();
 
-    // Remove all Components attached to the current instance.
-    instance.removeAllComponents();
+    // Erase the object from the Entity tree. All child objects should follow (I
+    // think).
+    instance.parent_->children_.erase(&instance);
 }
 
 /**
