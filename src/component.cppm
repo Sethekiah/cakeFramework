@@ -1,3 +1,9 @@
+/*
+ * TODO:
+ * 
+ * - add enabling and disabling
+ */
+
 // Copyright 2025 Caleb Whitmer
 
 export module cakeFramework:component;

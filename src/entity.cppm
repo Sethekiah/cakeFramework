@@ -1,12 +1,9 @@
 /*
  * TODO:
- * 
- * - Add additional functions under Entity class
- *   - getComponentInParent
- *   - getComponentsInChildren
- *   - Look for more useful functions on Unity Docs
- * - Possibly add additional system functions to Component class
- * 
+ *
+ * - Game::end system call
+ * - Rename Start to Awake & create proper Start call to be called on the frame
+ *   when it is enabled.
  */
 
 // Copyright 2025 Caleb Whitmer
@@ -23,6 +20,7 @@ import std;
  */
 class Entity final {
     friend void refresh__(void);
+    friend void destroy(Entity& instance);
     friend class Entity_Root_Manager;
 
     inline static Entity* root_ = nullptr;
@@ -32,6 +30,11 @@ class Entity final {
 
     std::unordered_map<std::type_index, Component*> components_;
 
+    /**
+     * @brief      Sets the parent of the current instance.
+     *
+     * @param      parent  The parent
+     */
     void setParent_(Entity* parent) {
         // Insert this into the new parent's children set
         parent->children_.insert(this);
@@ -116,11 +119,7 @@ class Entity final {
      * @brief      Destroys the object and deallocates all memory stored within
      */
     ~Entity(void) {
-        // Delete all memory allocations stored in the Components map
-        std::for_each(components_.begin(), components_.end(), [](auto& it){
-            delete it.second;
-            it.second = nullptr;
-        });
+        removeAllComponents();
     }
 
     /**
@@ -130,6 +129,16 @@ class Entity final {
      */
     Entity* getParent(void) {
         return parent_;
+    }
+
+    /**
+     * @brief      Delete all memory allocations stored in the Components map.
+     */
+    void removeAllComponents() {
+        std::for_each(components_.begin(), components_.end(), [](auto& it){
+            delete it.second;
+            it.second = nullptr;
+        });
     }
 
     /**
@@ -183,9 +192,9 @@ class Entity final {
     }
 
     /**
-     * @brief      Gets a specified component from the current instance
+     * @brief      Gets a specified Component from the current instance
      *
-     * @tparam     T     The component type
+     * @tparam     T     The Component type
      *
      * @return     A pointer to the component if it exists, null otherwise
      */
@@ -202,7 +211,70 @@ class Entity final {
         // Otherwise return the component
         return static_cast<T*>(itToComponent->second);
     }
+
+    /**
+     * @brief      Gets a specified Component from the current instance's
+     *             parent.
+     *
+     * @tparam     T     The Component type
+     *
+     * @return     A pointer to the component if it exists, null otherwise
+     */
+    template<class T>
+    T* getComponentInParent(void) {
+        // If the current instance does not have a parent then return a null
+        // pointer
+        if (parent_ == nullptr)
+            return nullptr;
+
+        // Otherwise get the desired Component in the instance's parent
+        return parent_->getComponent<T>();
+    }
+
+    /**
+     * @brief      Gets all of the Components of a specific type in children of
+     *             the current instance.
+     *
+     * @tparam     T     The Component type
+     *
+     * @return     The an optional object containing a vector of pointers to the
+     *             desired Component type in the children of the current
+     *             instance.
+     */
+    template<class T>
+    std::optional<std::vector<T*>> getComponentsInChildren(void) {
+        // Create a vector to store pointers to all of the Components which are
+        // found in the children of the current instance
+        std::vector<T*> componentVector;
+
+        // Fill the vector with any and all Components found
+        std::for_each(children_.begin(), children_.end(), [&](auto& it){
+            if (auto* comp = it-> template getComponent<T>())
+                componentVector.push_back(comp);
+        });
+
+        // Return a null pointer if no Components where found, otherwise return
+        // a pointer to an a vector storing pointers to each Component
+        return (componentVector.size() == 0)
+                ? std::nullopt
+                : std::make_optional<std::vector<T*>>(
+                    std::move(componentVector));
+    }
 };
+
+/**
+ * @brief      Destroys the given instance.
+ *
+ * @param      instance  The instance
+ */
+void destroy(Entity& instance) {
+    // Pull the specified instance out of the Entity tree. 
+    if (instance.parent_ != nullptr)
+        instance.parent_->children_.erase(&instance);
+
+    // Remove all Components attached to the current instance.
+    instance.removeAllComponents();
+}
 
 /**
  * @brief      This class exists only to manage the memory allocated for the

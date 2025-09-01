@@ -1,316 +1,346 @@
 {
-    nim_arch_x86_64_plat_linux = {
-        __global = true,
-        __checked = false,
-        arch = "x86_64",
-        plat = "linux"
-    },
-    gfortran_arch_x86_64_plat_linux = {
-        __global = true,
-        __checked = true,
-        arch = "x86_64",
-        plat = "linux"
-    },
-    ["tool_package_table: 0x5802bc597550_linux_x86_64_ld"] = {
+    ["tool_package_table: 0x5802bc2d9870_linux_x86_64_cc"] = {
         toolchain_info = {
+            plat = "linux",
             name = "clang",
             cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
+            arch = "x86_64"
         },
-        program = "/usr/bin/clang++",
-        toolname = "clangxx"
+        toolname = "clang",
+        program = "/usr/bin/clang"
     },
-    rust_arch_x86_64_plat_linux = {
+    cuda_arch_x86_64_plat_linux = {
+        plat = "linux",
         __global = true,
-        __checked = true,
         arch = "x86_64",
-        plat = "linux"
+        __checked = true
     },
     tool_target_cakeFramework_linux_x86_64_cxx = {
         toolchain_info = {
+            plat = "linux",
             name = "clang",
             cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
+            arch = "x86_64"
         },
-        program = "/usr/bin/clang",
-        toolname = "clang"
+        toolname = "clang",
+        program = "/usr/bin/clang"
     },
     ["tool_package_table: 0x5802bc63ede0_linux_x86_64_ld"] = {
         toolchain_info = {
+            plat = "linux",
             name = "clang",
             cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
+            arch = "x86_64"
         },
-        program = "/usr/bin/clang++",
-        toolname = "clangxx"
-    },
-    clang_arch_x86_64_plat_linux = {
-        __global = true,
-        __checked = {
-            name = "clang",
-            program = "/usr/bin/clang"
-        },
-        arch = "x86_64",
-        plat = "linux"
-    },
-    fpc_arch_x86_64_plat_linux = {
-        __global = true,
-        __checked = true,
-        arch = "x86_64",
-        plat = "linux"
-    },
-    ["tool_package_table: 0x5802bc2a0dc0_linux_x86_64_ld"] = {
-        toolchain_info = {
-            name = "clang",
-            cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
-        },
-        program = "/usr/bin/clang++",
-        toolname = "clangxx"
-    },
-    tool_platform_linux_x86_64_ld = {
-        toolchain_info = {
-            name = "clang",
-            cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
-        },
-        program = "/usr/bin/clang++",
-        toolname = "clangxx"
-    },
-    swift_arch_x86_64_plat_linux = {
-        __global = true,
-        __checked = true,
-        arch = "x86_64",
-        plat = "linux"
-    },
-    cuda_arch_x86_64_plat_linux = {
-        __global = true,
-        __checked = true,
-        arch = "x86_64",
-        plat = "linux"
-    },
-    ["tool_package_table: 0x5802bc581200_linux_x86_64_cc"] = {
-        toolchain_info = {
-            name = "clang",
-            cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
-        },
-        program = "/usr/bin/clang",
-        toolname = "clang"
-    },
-    ["tool_package_table: 0x5802bc581200_linux_x86_64_ld"] = {
-        toolchain_info = {
-            name = "clang",
-            cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
-        },
-        program = "/usr/bin/clang++",
-        toolname = "clangxx"
-    },
-    ["tool_package_table: 0x5802bc63ede0_linux_x86_64_cc"] = {
-        toolchain_info = {
-            name = "clang",
-            cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
-        },
-        program = "/usr/bin/clang",
-        toolname = "clang"
-    },
-    yasm_arch_x86_64_plat_linux = {
-        __global = true,
-        __checked = true,
-        arch = "x86_64",
-        plat = "linux"
-    },
-    tool_target_std_linux_x86_64_cxx = {
-        toolchain_info = {
-            name = "clang",
-            cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
-        },
-        program = "/usr/bin/clang",
-        toolname = "clang"
-    },
-    ["tool_package_table: 0x5802bc4caca0_linux_x86_64_ld"] = {
-        toolchain_info = {
-            name = "clang",
-            cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
-        },
-        program = "/usr/bin/clang++",
-        toolname = "clangxx"
-    },
-    gcc_arch_x86_64_plat_linux = {
-        __global = true,
-        __checked = {
-            name = "gcc",
-            program = "/usr/bin/gcc"
-        },
-        arch = "x86_64",
-        plat = "linux"
-    },
-    ["tool_package_table: 0x5802bc2d9870_linux_x86_64_cc"] = {
-        toolchain_info = {
-            name = "clang",
-            cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
-        },
-        program = "/usr/bin/clang",
-        toolname = "clang"
-    },
-    nasm_arch_x86_64_plat_linux = {
-        __global = true,
-        __checked = true,
-        arch = "x86_64",
-        plat = "linux"
-    },
-    fasm_arch_x86_64_plat_linux = {
-        __global = true,
-        __checked = true,
-        arch = "x86_64",
-        plat = "linux"
+        toolname = "clangxx",
+        program = "/usr/bin/clang++"
     },
     ["tool_package_table: 0x5802bc597550_linux_x86_64_cc"] = {
         toolchain_info = {
+            plat = "linux",
             name = "clang",
             cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
+            arch = "x86_64"
         },
-        program = "/usr/bin/clang",
-        toolname = "clang"
+        toolname = "clang",
+        program = "/usr/bin/clang"
     },
-    ["tool_package_table: 0x5802bbebae40_linux_x86_64_ld"] = {
+    ["tool_package_table: 0x5802bc63ede0_linux_x86_64_cc"] = {
         toolchain_info = {
+            plat = "linux",
             name = "clang",
             cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
+            arch = "x86_64"
         },
-        program = "/usr/bin/clang++",
-        toolname = "clangxx"
+        toolname = "clang",
+        program = "/usr/bin/clang"
     },
-    ["tool_package_table: 0x5802bc340840_linux_x86_64_ld"] = {
-        toolchain_info = {
-            name = "clang",
-            cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
-        },
-        program = "/usr/bin/clang++",
-        toolname = "clangxx"
-    },
-    ["tool_package_table: 0x5802bbd9bcb0_linux_x86_64_ld"] = {
-        toolchain_info = {
-            name = "clang",
-            cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
-        },
-        program = "/usr/bin/clang++",
-        toolname = "clangxx"
-    },
-    ["tool_package_table: 0x5802bbebae40_linux_x86_64_cc"] = {
-        toolchain_info = {
-            name = "clang",
-            cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
-        },
-        program = "/usr/bin/clang",
-        toolname = "clang"
-    },
-    ["tool_package_table: 0x5802bbd9bcb0_linux_x86_64_cc"] = {
-        toolchain_info = {
-            name = "clang",
-            cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
-        },
-        program = "/usr/bin/clang",
-        toolname = "clang"
-    },
-    go_arch_x86_64_plat_linux = {
+    gcc_arch_x86_64_plat_linux = {
+        plat = "linux",
         __global = true,
-        __checked = true,
         arch = "x86_64",
-        plat = "linux"
+        __checked = {
+            name = "gcc",
+            program = "/usr/bin/gcc"
+        }
     },
     ["tool_package_table: 0x5802bc2a0dc0_linux_x86_64_cc"] = {
         toolchain_info = {
+            plat = "linux",
             name = "clang",
             cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
+            arch = "x86_64"
         },
-        program = "/usr/bin/clang",
-        toolname = "clang"
+        toolname = "clang",
+        program = "/usr/bin/clang"
+    },
+    ["tool_package_table: 0x5802bc581200_linux_x86_64_cc"] = {
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            cachekey = "clang_arch_x86_64_plat_linux",
+            arch = "x86_64"
+        },
+        toolname = "clang",
+        program = "/usr/bin/clang"
+    },
+    ["tool_package_table: 0x5802bbd9bcb0_linux_x86_64_ld"] = {
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            cachekey = "clang_arch_x86_64_plat_linux",
+            arch = "x86_64"
+        },
+        toolname = "clangxx",
+        program = "/usr/bin/clang++"
     },
     ["tool_package_table: 0x5802bc4caca0_linux_x86_64_cc"] = {
         toolchain_info = {
+            plat = "linux",
             name = "clang",
             cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
+            arch = "x86_64"
         },
-        program = "/usr/bin/clang",
-        toolname = "clang"
+        toolname = "clang",
+        program = "/usr/bin/clang"
+    },
+    nim_arch_x86_64_plat_linux = {
+        plat = "linux",
+        __global = true,
+        arch = "x86_64",
+        __checked = false
+    },
+    ["tool_package_table: 0x5802bc2a0dc0_linux_x86_64_ld"] = {
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            cachekey = "clang_arch_x86_64_plat_linux",
+            arch = "x86_64"
+        },
+        toolname = "clangxx",
+        program = "/usr/bin/clang++"
+    },
+    clang_arch_x86_64_plat_linux = {
+        plat = "linux",
+        __global = true,
+        arch = "x86_64",
+        __checked = {
+            name = "clang",
+            program = "/usr/bin/clang"
+        }
+    },
+    fpc_arch_x86_64_plat_linux = {
+        plat = "linux",
+        __global = true,
+        arch = "x86_64",
+        __checked = true
+    },
+    fasm_arch_x86_64_plat_linux = {
+        plat = "linux",
+        __global = true,
+        arch = "x86_64",
+        __checked = true
+    },
+    rust_arch_x86_64_plat_linux = {
+        plat = "linux",
+        __global = true,
+        arch = "x86_64",
+        __checked = true
+    },
+    swift_arch_x86_64_plat_linux = {
+        plat = "linux",
+        __global = true,
+        arch = "x86_64",
+        __checked = true
+    },
+    tool_target_std_linux_x86_64_cxx = {
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            cachekey = "clang_arch_x86_64_plat_linux",
+            arch = "x86_64"
+        },
+        toolname = "clang",
+        program = "/usr/bin/clang"
     },
     tool_platform_linux_x86_64_cc = {
         toolchain_info = {
+            plat = "linux",
             name = "clang",
             cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
+            arch = "x86_64"
         },
-        program = "/usr/bin/clang",
-        toolname = "clang"
+        toolname = "clang",
+        program = "/usr/bin/clang"
+    },
+    yasm_arch_x86_64_plat_linux = {
+        plat = "linux",
+        __global = true,
+        arch = "x86_64",
+        __checked = true
+    },
+    ["tool_package_table: 0x5802bc597550_linux_x86_64_ld"] = {
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            cachekey = "clang_arch_x86_64_plat_linux",
+            arch = "x86_64"
+        },
+        toolname = "clangxx",
+        program = "/usr/bin/clang++"
+    },
+    ["tool_package_table: 0x5802bbebae40_linux_x86_64_cc"] = {
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            cachekey = "clang_arch_x86_64_plat_linux",
+            arch = "x86_64"
+        },
+        toolname = "clang",
+        program = "/usr/bin/clang"
+    },
+    nasm_arch_x86_64_plat_linux = {
+        plat = "linux",
+        __global = true,
+        arch = "x86_64",
+        __checked = true
+    },
+    tool_target_cakeFramework_linux_x86_64_ar = {
+        program = "/usr/bin/ar",
+        toolname = "ar",
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            arch = "x86_64",
+            cachekey = "clang_arch_x86_64_plat_linux"
+        }
+    },
+    tool_platform_linux_x86_64_ld = {
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            cachekey = "clang_arch_x86_64_plat_linux",
+            arch = "x86_64"
+        },
+        toolname = "clangxx",
+        program = "/usr/bin/clang++"
+    },
+    tool_target_std_linux_x86_64_ar = {
+        program = "/usr/bin/ar",
+        toolname = "ar",
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            arch = "x86_64",
+            cachekey = "clang_arch_x86_64_plat_linux"
+        }
+    },
+    ["tool_package_table: 0x5802bc4caca0_linux_x86_64_ld"] = {
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            cachekey = "clang_arch_x86_64_plat_linux",
+            arch = "x86_64"
+        },
+        toolname = "clangxx",
+        program = "/usr/bin/clang++"
+    },
+    ["tool_package_table: 0x5802bbd9bcb0_linux_x86_64_cc"] = {
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            cachekey = "clang_arch_x86_64_plat_linux",
+            arch = "x86_64"
+        },
+        toolname = "clang",
+        program = "/usr/bin/clang"
+    },
+    gfortran_arch_x86_64_plat_linux = {
+        plat = "linux",
+        __global = true,
+        arch = "x86_64",
+        __checked = true
+    },
+    go_arch_x86_64_plat_linux = {
+        plat = "linux",
+        __global = true,
+        arch = "x86_64",
+        __checked = true
+    },
+    ["tool_package_table: 0x5802bc340840_linux_x86_64_ld"] = {
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            cachekey = "clang_arch_x86_64_plat_linux",
+            arch = "x86_64"
+        },
+        toolname = "clangxx",
+        program = "/usr/bin/clang++"
     },
     tool_target_a_linux_x86_64_cxx = {
         toolchain_info = {
+            plat = "linux",
             name = "clang",
             cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
+            arch = "x86_64"
         },
-        program = "/usr/bin/clang",
-        toolname = "clang"
+        toolname = "clang",
+        program = "/usr/bin/clang"
+    },
+    tool_target_a_linux_x86_64_ld = {
+        program = "/usr/bin/clang++",
+        toolname = "clangxx",
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            arch = "x86_64",
+            cachekey = "clang_arch_x86_64_plat_linux"
+        }
+    },
+    ["tool_package_table: 0x5802bc581200_linux_x86_64_ld"] = {
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            cachekey = "clang_arch_x86_64_plat_linux",
+            arch = "x86_64"
+        },
+        toolname = "clangxx",
+        program = "/usr/bin/clang++"
+    },
+    ["tool_package_table: 0x5802bbebae40_linux_x86_64_ld"] = {
+        toolchain_info = {
+            plat = "linux",
+            name = "clang",
+            cachekey = "clang_arch_x86_64_plat_linux",
+            arch = "x86_64"
+        },
+        toolname = "clangxx",
+        program = "/usr/bin/clang++"
     },
     ["tool_package_table: 0x5802bc340840_linux_x86_64_cc"] = {
         toolchain_info = {
+            plat = "linux",
             name = "clang",
             cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
+            arch = "x86_64"
         },
-        program = "/usr/bin/clang",
-        toolname = "clang"
-    },
-    envs_arch_x86_64_plat_linux = {
-        __global = true,
-        __checked = true,
-        arch = "x86_64",
-        plat = "linux"
+        toolname = "clang",
+        program = "/usr/bin/clang"
     },
     ["tool_package_table: 0x5802bc2d9870_linux_x86_64_ld"] = {
         toolchain_info = {
+            plat = "linux",
             name = "clang",
             cachekey = "clang_arch_x86_64_plat_linux",
-            arch = "x86_64",
-            plat = "linux"
+            arch = "x86_64"
         },
-        program = "/usr/bin/clang++",
-        toolname = "clangxx"
+        toolname = "clangxx",
+        program = "/usr/bin/clang++"
+    },
+    envs_arch_x86_64_plat_linux = {
+        plat = "linux",
+        __global = true,
+        arch = "x86_64",
+        __checked = true
     }
 }

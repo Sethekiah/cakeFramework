@@ -1,644 +1,81 @@
 {
-    a = {
-        sourcebatch_sum = "a2337f90",
-        ["c++.modules"] = {
-            ["src/entity.cppm"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/entity.cppm.o",
-                deps = {
-                    std = {
-                        unique = false,
-                        name = "std",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    ["cakeFramework:component"] = {
-                        unique = true,
-                        name = "cakeFramework:component",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    }
-                },
-                sourcefile = "src/entity.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/4e652fb3/cakeFramework_PARTITION_entity.pcm",
-                name = "cakeFramework:entity"
-            },
-            ["src/component.cppm"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/component.cppm.o",
-                deps = { },
-                sourcefile = "src/component.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/31c638a4/cakeFramework_PARTITION_component.pcm",
-                name = "cakeFramework:component"
-            },
-            ["/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"] = {
-                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm.o",
-                deps = {
-                    std = {
-                        unique = false,
-                        name = "std",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    }
-                },
-                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm",
-                interface = true,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/interfaces/0f82986d/std.compat.pcm",
-                name = "std.compat"
-            },
-            ["src/internal.cppm"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/internal.cppm.o",
-                deps = {
-                    ["cakeFramework:time"] = {
-                        unique = true,
-                        name = "cakeFramework:time",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    std = {
-                        unique = false,
-                        name = "std",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    ["cakeFramework:entity"] = {
-                        unique = true,
-                        name = "cakeFramework:entity",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    }
-                },
-                sourcefile = "src/internal.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/16415e5d/cakeFramework_PARTITION_internal.pcm",
-                name = "cakeFramework:internal"
-            },
-            ["src/sandbox/main.cpp"] = {
-                objectfile = "build/.objs/a/linux/x86_64/release/src/sandbox/main.cpp.o",
-                deps = {
-                    std = {
-                        unique = false,
-                        name = "std",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    cakeFramework = {
-                        unique = false,
-                        name = "cakeFramework",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    }
-                },
-                sourcefile = "src/sandbox/main.cpp"
-            },
-            ["src/game.cppm"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/game.cppm.o",
-                deps = {
-                    ["cakeFramework:internal"] = {
-                        unique = true,
-                        name = "cakeFramework:internal",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    std = {
-                        unique = false,
-                        name = "std",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    }
-                },
-                sourcefile = "src/game.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/fdc578c4/cakeFramework_PARTITION_game.pcm",
-                name = "cakeFramework:game"
-            },
-            ["/usr/lib/llvm-20/share/libc++/v1/std.cppm"] = {
-                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
-                deps = { },
-                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.cppm",
-                interface = true,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/interfaces/3cce8c51/std.pcm",
-                name = "std"
-            },
-            ["src/cakeFramework.cppm"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/cakeFramework.cppm.o",
-                deps = {
-                    ["cakeFramework:time"] = {
-                        unique = true,
-                        name = "cakeFramework:time",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    ["cakeFramework:component"] = {
-                        unique = true,
-                        name = "cakeFramework:component",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    ["cakeFramework:internal"] = {
-                        unique = true,
-                        name = "cakeFramework:internal",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    ["cakeFramework:game"] = {
-                        unique = true,
-                        name = "cakeFramework:game",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    ["cakeFramework:entity"] = {
-                        unique = true,
-                        name = "cakeFramework:entity",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    }
-                },
-                sourcefile = "src/cakeFramework.cppm",
-                interface = true,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/interfaces/cf8107ef/cakeFramework.pcm",
-                name = "cakeFramework"
-            },
-            ["src/time.cppm"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/time.cppm.o",
-                deps = { },
-                sourcefile = "src/time.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/8a1b7b88/cakeFramework_PARTITION_time.pcm",
-                name = "cakeFramework:time"
-            }
-        },
-        ["c++.build.sourcebatch"] = {
-            sourcefiles = {
-                "src/sandbox/main.cpp"
-            },
-            sourcekind = "cxx",
-            objectfiles = {
-                "build/.objs/a/linux/x86_64/release/src/sandbox/main.cpp.o"
-            },
-            rulename = "c++.build",
-            dependfiles = {
-                "build/.deps/a/linux/x86_64/release/src/sandbox/main.cpp.o.d"
-            }
-        },
-        module_mapper = {
-            ["src/cakeFramework.cppm"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/cakeFramework.cppm.o",
-                name = "cakeFramework",
-                deps = ref("a", "c++.modules", "src/cakeFramework.cppm", "deps"),
-                sourcefile = "src/cakeFramework.cppm",
-                interface = true,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/interfaces/cf8107ef/cakeFramework.pcm",
-                sourcealias = true
-            },
-            ["/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"] = {
-                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm.o",
-                name = "std.compat",
-                deps = ref("a", "c++.modules", "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm", "deps"),
-                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm",
-                interface = true,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/interfaces/0f82986d/std.compat.pcm",
-                sourcealias = true
-            },
-            std = ref("std", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.cppm"),
-            ["src/sandbox/main.cpp"] = {
-                objectfile = "build/.objs/a/linux/x86_64/release/src/sandbox/main.cpp.o",
-                sourcefile = "src/sandbox/main.cpp",
-                deps = ref("a", "c++.modules", "src/sandbox/main.cpp", "deps"),
-                sourcealias = true
-            },
-            ["src/entity.cppm"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/entity.cppm.o",
-                name = "cakeFramework:entity",
-                deps = ref("a", "c++.modules", "src/entity.cppm", "deps"),
-                sourcefile = "src/entity.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/4e652fb3/cakeFramework_PARTITION_entity.pcm",
-                sourcealias = true
-            },
-            ["/usr/lib/llvm-20/share/libc++/v1/std.cppm"] = {
-                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
-                name = "std",
-                deps = ref("a", "c++.modules", "/usr/lib/llvm-20/share/libc++/v1/std.cppm", "deps"),
-                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.cppm",
-                interface = true,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/interfaces/3cce8c51/std.pcm",
-                sourcealias = true
-            },
-            ["std.compat"] = ref("std", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"),
-            ["src/internal.cppm"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/internal.cppm.o",
-                name = "cakeFramework:internal",
-                deps = ref("a", "c++.modules", "src/internal.cppm", "deps"),
-                sourcefile = "src/internal.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/16415e5d/cakeFramework_PARTITION_internal.pcm",
-                sourcealias = true
-            },
-            ["cakeFramework:entity"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/entity.cppm.o",
-                name = "cakeFramework:entity",
-                deps = {
-                    std = {
-                        unique = false,
-                        name = "std",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    ["cakeFramework:component"] = {
-                        unique = true,
-                        name = "cakeFramework:component",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    }
-                },
-                interface = false,
-                sourcefile = "src/entity.cppm",
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/4e652fb3/cakeFramework_PARTITION_entity.pcm",
-                sourcealias = true
-            },
-            ["cakeFramework:game"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/game.cppm.o",
-                name = "cakeFramework:game",
-                deps = {
-                    ["cakeFramework:internal"] = {
-                        unique = true,
-                        name = "cakeFramework:internal",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    std = {
-                        unique = false,
-                        name = "std",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    }
-                },
-                interface = false,
-                sourcefile = "src/game.cppm",
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/fdc578c4/cakeFramework_PARTITION_game.pcm",
-                sourcealias = true
-            },
-            ["cakeFramework:component"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/component.cppm.o",
-                name = "cakeFramework:component",
-                deps = { },
-                interface = false,
-                sourcefile = "src/component.cppm",
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/31c638a4/cakeFramework_PARTITION_component.pcm",
-                sourcealias = true
-            },
-            ["src/component.cppm"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/component.cppm.o",
-                name = "cakeFramework:component",
-                deps = ref("a", "c++.modules", "src/component.cppm", "deps"),
-                sourcefile = "src/component.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/31c638a4/cakeFramework_PARTITION_component.pcm",
-                sourcealias = true
-            },
-            ["cakeFramework:time"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/time.cppm.o",
-                name = "cakeFramework:time",
-                deps = { },
-                interface = false,
-                sourcefile = "src/time.cppm",
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/8a1b7b88/cakeFramework_PARTITION_time.pcm",
-                sourcealias = true
-            },
-            ["src/time.cppm"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/time.cppm.o",
-                name = "cakeFramework:time",
-                deps = ref("a", "c++.modules", "src/time.cppm", "deps"),
-                sourcefile = "src/time.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/8a1b7b88/cakeFramework_PARTITION_time.pcm",
-                sourcealias = true
-            },
-            ["src/game.cppm"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/game.cppm.o",
-                name = "cakeFramework:game",
-                deps = ref("a", "c++.modules", "src/game.cppm", "deps"),
-                sourcefile = "src/game.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/fdc578c4/cakeFramework_PARTITION_game.pcm",
-                sourcealias = true
-            },
-            ["cakeFramework:internal"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/internal.cppm.o",
-                name = "cakeFramework:internal",
-                deps = {
-                    ["cakeFramework:time"] = {
-                        unique = true,
-                        name = "cakeFramework:time",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    std = {
-                        unique = false,
-                        name = "std",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    ["cakeFramework:entity"] = {
-                        unique = true,
-                        name = "cakeFramework:entity",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    }
-                },
-                interface = false,
-                sourcefile = "src/internal.cppm",
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/16415e5d/cakeFramework_PARTITION_internal.pcm",
-                sourcealias = true
-            },
-            cakeFramework = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/cakeFramework.cppm.o",
-                name = "cakeFramework",
-                deps = {
-                    ["cakeFramework:time"] = {
-                        unique = true,
-                        name = "cakeFramework:time",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    ["cakeFramework:component"] = {
-                        unique = true,
-                        name = "cakeFramework:component",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    ["cakeFramework:internal"] = {
-                        unique = true,
-                        name = "cakeFramework:internal",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    ["cakeFramework:game"] = {
-                        unique = true,
-                        name = "cakeFramework:game",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    },
-                    ["cakeFramework:entity"] = {
-                        unique = true,
-                        name = "cakeFramework:entity",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    }
-                },
-                interface = true,
-                sourcefile = "src/cakeFramework.cppm",
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/interfaces/cf8107ef/cakeFramework.pcm",
-                sourcealias = true
-            }
-        },
+    std = {
         ["c++.modules.built_artifacts"] = {
             objectfiles = {
-                "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o"
+                "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
+                "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm.o"
             },
             modules = {
-                "src/sandbox/main.cpp"
+                "/usr/lib/llvm-20/share/libc++/v1/std.cppm",
+                "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"
             },
             headerunits = { }
-        }
-    },
-    std = {
-        sourcebatch_sum = "c8d65700",
+        },
         ["c++.modules"] = {
             ["/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"] = ref("std", "module_mapper", "std.compat"),
             ["/usr/lib/llvm-20/share/libc++/v1/std.cppm"] = ref("std", "module_mapper", "std")
         },
         module_mapper = {
             std = {
-                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
-                deps = ref("std", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.cppm", "deps"),
-                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.cppm",
-                interface = true,
-                method = "by-name",
                 bmifile = "build/.gens/std/linux/x86_64/release/rules/bmi/cache/interfaces/3cce8c51/std.pcm",
-                name = "std"
+                method = "by-name",
+                interface = true,
+                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.cppm",
+                name = "std",
+                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
+                deps = { }
             },
             ["/usr/lib/llvm-20/share/libc++/v1/std.cppm"] = {
+                bmifile = "build/.gens/std/linux/x86_64/release/rules/bmi/cache/interfaces/3cce8c51/std.pcm",
+                method = "by-name",
+                sourcealias = true,
                 objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
-                name = "std",
-                deps = { },
+                deps = ref("std", "module_mapper", "std", "deps"),
                 interface = true,
                 sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.cppm",
+                name = "std"
+            },
+            ["/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"] = {
+                bmifile = "build/.gens/std/linux/x86_64/release/rules/bmi/cache/interfaces/0f82986d/std.compat.pcm",
                 method = "by-name",
-                bmifile = "build/.gens/std/linux/x86_64/release/rules/bmi/cache/interfaces/3cce8c51/std.pcm",
-                sourcealias = true
+                sourcealias = true,
+                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm.o",
+                deps = {
+                    std = {
+                        unique = false,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "std"
+                    }
+                },
+                interface = true,
+                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm",
+                name = "std.compat"
             },
             ["std.compat"] = {
-                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm.o",
-                deps = {
-                    std = {
-                        unique = false,
-                        name = "std",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    }
-                },
-                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm",
-                interface = true,
-                method = "by-name",
                 bmifile = "build/.gens/std/linux/x86_64/release/rules/bmi/cache/interfaces/0f82986d/std.compat.pcm",
-                name = "std.compat"
-            },
-            ["/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"] = {
-                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm.o",
+                method = "by-name",
+                interface = true,
+                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm",
                 name = "std.compat",
-                deps = ref("std", "module_mapper", "std.compat", "deps"),
-                interface = true,
-                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm",
-                method = "by-name",
-                bmifile = "build/.gens/std/linux/x86_64/release/rules/bmi/cache/interfaces/0f82986d/std.compat.pcm",
-                sourcealias = true
+                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm.o",
+                deps = ref("std", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm", "deps")
             }
         },
-        ["c++.modules.built_artifacts"] = {
-            modules = {
-                "/usr/lib/llvm-20/share/libc++/v1/std.cppm",
-                "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"
-            },
-            objectfiles = {
-                "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
-                "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm.o"
-            },
-            headerunits = { }
-        }
+        sourcebatch_sum = "c8d65700"
     },
     cakeFramework = {
-        sourcebatch_sum = "bae0cf90",
-        ["c++.modules"] = {
-            ["src/entity.cppm"] = ref("cakeFramework", "module_mapper", "cakeFramework:entity"),
-            ["src/component.cppm"] = ref("cakeFramework", "module_mapper", "cakeFramework:component"),
-            ["/usr/lib/llvm-20/share/libc++/v1/std.cppm"] = {
-                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
-                deps = ref("cakeFramework", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.cppm", "deps"),
-                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.cppm",
-                interface = true,
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/interfaces/3cce8c51/std.pcm",
-                name = "std"
-            },
-            ["/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"] = {
-                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm.o",
-                deps = ref("cakeFramework", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm", "deps"),
-                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm",
-                interface = true,
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/interfaces/0f82986d/std.compat.pcm",
-                name = "std.compat"
-            },
-            ["src/time.cppm"] = ref("cakeFramework", "module_mapper", "cakeFramework:time"),
-            ["src/internal.cppm"] = ref("cakeFramework", "module_mapper", "cakeFramework:internal"),
-            ["src/game.cppm"] = ref("cakeFramework", "module_mapper", "cakeFramework:game"),
-            ["src/cakeFramework.cppm"] = ref("cakeFramework", "module_mapper", "cakeFramework")
-        },
-        module_mapper = {
-            ["src/entity.cppm"] = ref("a", "module_mapper", "cakeFramework:entity"),
-            ["src/component.cppm"] = ref("a", "module_mapper", "cakeFramework:component"),
-            ["std.compat"] = ref("std", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"),
-            ["/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"] = {
-                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm.o",
-                name = "std.compat",
-                deps = {
-                    std = {
-                        unique = false,
-                        name = "std",
-                        method = "by-name",
-                        headerunit = false,
-                        key = false
-                    }
-                },
-                interface = true,
-                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm",
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/interfaces/0f82986d/std.compat.pcm",
-                sourcealias = true
-            },
-            ["src/cakeFramework.cppm"] = ref("a", "module_mapper", "cakeFramework"),
-            ["src/internal.cppm"] = ref("a", "module_mapper", "cakeFramework:internal"),
-            std = ref("std", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.cppm"),
-            ["cakeFramework:entity"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/entity.cppm.o",
-                deps = ref("a", "module_mapper", "cakeFramework:entity", "deps"),
-                sourcefile = "src/entity.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/4e652fb3/cakeFramework_PARTITION_entity.pcm",
-                name = "cakeFramework:entity"
-            },
-            ["cakeFramework:game"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/game.cppm.o",
-                deps = ref("a", "module_mapper", "cakeFramework:game", "deps"),
-                sourcefile = "src/game.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/fdc578c4/cakeFramework_PARTITION_game.pcm",
-                name = "cakeFramework:game"
-            },
-            ["cakeFramework:component"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/component.cppm.o",
-                deps = ref("a", "module_mapper", "cakeFramework:component", "deps"),
-                sourcefile = "src/component.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/31c638a4/cakeFramework_PARTITION_component.pcm",
-                name = "cakeFramework:component"
-            },
-            ["/usr/lib/llvm-20/share/libc++/v1/std.cppm"] = {
-                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
-                name = "std",
-                deps = { },
-                interface = true,
-                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.cppm",
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/interfaces/3cce8c51/std.pcm",
-                sourcealias = true
-            },
-            ["src/time.cppm"] = ref("a", "module_mapper", "cakeFramework:time"),
-            ["cakeFramework:internal"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/internal.cppm.o",
-                deps = ref("a", "module_mapper", "cakeFramework:internal", "deps"),
-                sourcefile = "src/internal.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/16415e5d/cakeFramework_PARTITION_internal.pcm",
-                name = "cakeFramework:internal"
-            },
-            ["src/game.cppm"] = ref("a", "module_mapper", "cakeFramework:game"),
-            ["cakeFramework:time"] = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/time.cppm.o",
-                deps = ref("a", "module_mapper", "cakeFramework:time", "deps"),
-                sourcefile = "src/time.cppm",
-                interface = false,
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/8a1b7b88/cakeFramework_PARTITION_time.pcm",
-                name = "cakeFramework:time"
-            },
-            cakeFramework = {
-                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/cakeFramework.cppm.o",
-                deps = ref("a", "module_mapper", "cakeFramework", "deps"),
-                sourcefile = "src/cakeFramework.cppm",
-                interface = true,
-                method = "by-name",
-                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/interfaces/cf8107ef/cakeFramework.pcm",
-                name = "cakeFramework"
-            }
-        },
         ["c++.modules.built_artifacts"] = {
+            objectfiles = {
+                "build/.objs/cakeFramework/linux/x86_64/release/src/component.cppm.o",
+                "build/.objs/cakeFramework/linux/x86_64/release/src/time.cppm.o",
+                "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
+                "build/.objs/cakeFramework/linux/x86_64/release/src/entity.cppm.o",
+                "build/.objs/cakeFramework/linux/x86_64/release/src/internal.cppm.o",
+                "build/.objs/cakeFramework/linux/x86_64/release/src/game.cppm.o",
+                "build/.objs/cakeFramework/linux/x86_64/release/src/cakeFramework.cppm.o"
+            },
             modules = {
                 "src/component.cppm",
                 "src/time.cppm",
@@ -647,16 +84,579 @@
                 "src/game.cppm",
                 "src/cakeFramework.cppm"
             },
+            headerunits = { }
+        },
+        ["c++.modules"] = {
+            ["src/cakeFramework.cppm"] = ref("cakeFramework", "module_mapper", "cakeFramework"),
+            ["/usr/lib/llvm-20/share/libc++/v1/std.cppm"] = {
+                interface = true,
+                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/interfaces/3cce8c51/std.pcm",
+                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.cppm",
+                method = "by-name",
+                name = "std",
+                deps = ref("cakeFramework", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.cppm", "deps")
+            },
+            ["src/internal.cppm"] = ref("cakeFramework", "module_mapper", "cakeFramework:internal"),
+            ["src/entity.cppm"] = ref("cakeFramework", "module_mapper", "cakeFramework:entity"),
+            ["src/component.cppm"] = ref("cakeFramework", "module_mapper", "cakeFramework:component"),
+            ["src/game.cppm"] = ref("cakeFramework", "module_mapper", "cakeFramework:game"),
+            ["/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"] = {
+                interface = true,
+                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm.o",
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/interfaces/0f82986d/std.compat.pcm",
+                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm",
+                method = "by-name",
+                name = "std.compat",
+                deps = ref("cakeFramework", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm", "deps")
+            },
+            ["src/time.cppm"] = ref("cakeFramework", "module_mapper", "cakeFramework:time")
+        },
+        module_mapper = {
+            ["cakeFramework:time"] = {
+                interface = false,
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/time.cppm.o",
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/8a1b7b88/cakeFramework_PARTITION_time.pcm",
+                sourcefile = "src/time.cppm",
+                method = "by-name",
+                name = "cakeFramework:time",
+                deps = { }
+            },
+            ["src/cakeFramework.cppm"] = {
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/interfaces/cf8107ef/cakeFramework.pcm",
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/cakeFramework.cppm.o",
+                interface = true,
+                method = "by-name",
+                deps = {
+                    ["cakeFramework:time"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:time"
+                    },
+                    ["cakeFramework:internal"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:internal"
+                    },
+                    ["cakeFramework:entity"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:entity"
+                    },
+                    ["cakeFramework:component"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:component"
+                    },
+                    ["cakeFramework:game"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:game"
+                    }
+                },
+                name = "cakeFramework",
+                sourcefile = "src/cakeFramework.cppm",
+                sourcealias = true
+            },
+            ["src/internal.cppm"] = {
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/16415e5d/cakeFramework_PARTITION_internal.pcm",
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/internal.cppm.o",
+                interface = false,
+                method = "by-name",
+                deps = {
+                    std = {
+                        unique = false,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "std"
+                    },
+                    ["cakeFramework:time"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:time"
+                    },
+                    ["cakeFramework:entity"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:entity"
+                    }
+                },
+                name = "cakeFramework:internal",
+                sourcefile = "src/internal.cppm",
+                sourcealias = true
+            },
+            ["src/entity.cppm"] = {
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/4e652fb3/cakeFramework_PARTITION_entity.pcm",
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/entity.cppm.o",
+                interface = false,
+                method = "by-name",
+                deps = {
+                    ["cakeFramework:component"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:component"
+                    },
+                    std = {
+                        unique = false,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "std"
+                    }
+                },
+                name = "cakeFramework:entity",
+                sourcefile = "src/entity.cppm",
+                sourcealias = true
+            },
+            ["cakeFramework:internal"] = {
+                interface = false,
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/internal.cppm.o",
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/16415e5d/cakeFramework_PARTITION_internal.pcm",
+                sourcefile = "src/internal.cppm",
+                method = "by-name",
+                name = "cakeFramework:internal",
+                deps = ref("cakeFramework", "module_mapper", "src/internal.cppm", "deps")
+            },
+            ["cakeFramework:entity"] = {
+                interface = false,
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/entity.cppm.o",
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/4e652fb3/cakeFramework_PARTITION_entity.pcm",
+                sourcefile = "src/entity.cppm",
+                method = "by-name",
+                name = "cakeFramework:entity",
+                deps = ref("cakeFramework", "module_mapper", "src/entity.cppm", "deps")
+            },
+            ["/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"] = {
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/interfaces/0f82986d/std.compat.pcm",
+                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm.o",
+                interface = true,
+                method = "by-name",
+                deps = {
+                    std = {
+                        unique = false,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "std"
+                    }
+                },
+                name = "std.compat",
+                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm",
+                sourcealias = true
+            },
+            ["src/game.cppm"] = {
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/fdc578c4/cakeFramework_PARTITION_game.pcm",
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/game.cppm.o",
+                interface = false,
+                method = "by-name",
+                deps = ref("cakeFramework", "module_mapper", "cakeFramework:game", "deps"),
+                name = "cakeFramework:game",
+                sourcefile = "src/game.cppm",
+                sourcealias = true
+            },
+            std = ref("std", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.cppm"),
+            ["src/component.cppm"] = {
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/31c638a4/cakeFramework_PARTITION_component.pcm",
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/component.cppm.o",
+                interface = false,
+                method = "by-name",
+                deps = { },
+                name = "cakeFramework:component",
+                sourcefile = "src/component.cppm",
+                sourcealias = true
+            },
+            ["cakeFramework:game"] = {
+                interface = false,
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/game.cppm.o",
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/fdc578c4/cakeFramework_PARTITION_game.pcm",
+                sourcefile = "src/game.cppm",
+                method = "by-name",
+                name = "cakeFramework:game",
+                deps = {
+                    ["cakeFramework:internal"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:internal"
+                    },
+                    std = {
+                        unique = false,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "std"
+                    }
+                }
+            },
+            ["std.compat"] = ref("std", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"),
+            ["cakeFramework:component"] = {
+                interface = false,
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/component.cppm.o",
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/31c638a4/cakeFramework_PARTITION_component.pcm",
+                sourcefile = "src/component.cppm",
+                method = "by-name",
+                name = "cakeFramework:component",
+                deps = ref("cakeFramework", "module_mapper", "src/component.cppm", "deps")
+            },
+            ["/usr/lib/llvm-20/share/libc++/v1/std.cppm"] = {
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/interfaces/3cce8c51/std.pcm",
+                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
+                interface = true,
+                method = "by-name",
+                deps = { },
+                name = "std",
+                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.cppm",
+                sourcealias = true
+            },
+            cakeFramework = {
+                interface = true,
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/cakeFramework.cppm.o",
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/interfaces/cf8107ef/cakeFramework.pcm",
+                sourcefile = "src/cakeFramework.cppm",
+                method = "by-name",
+                name = "cakeFramework",
+                deps = ref("cakeFramework", "module_mapper", "src/cakeFramework.cppm", "deps")
+            },
+            ["src/time.cppm"] = {
+                bmifile = "build/.gens/cakeFramework/linux/x86_64/release/rules/bmi/cache/implementation/8a1b7b88/cakeFramework_PARTITION_time.pcm",
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/time.cppm.o",
+                interface = false,
+                method = "by-name",
+                deps = ref("cakeFramework", "module_mapper", "cakeFramework:time", "deps"),
+                name = "cakeFramework:time",
+                sourcefile = "src/time.cppm",
+                sourcealias = true
+            }
+        },
+        sourcebatch_sum = "bae0cf90"
+    },
+    a = {
+        ["c++.modules.built_artifacts"] = {
             objectfiles = {
-                "build/.objs/cakeFramework/linux/x86_64/release/src/component.cppm.o",
-                "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
-                "build/.objs/cakeFramework/linux/x86_64/release/src/time.cppm.o",
-                "build/.objs/cakeFramework/linux/x86_64/release/src/entity.cppm.o",
-                "build/.objs/cakeFramework/linux/x86_64/release/src/internal.cppm.o",
-                "build/.objs/cakeFramework/linux/x86_64/release/src/game.cppm.o",
-                "build/.objs/cakeFramework/linux/x86_64/release/src/cakeFramework.cppm.o"
+                "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o"
+            },
+            modules = {
+                "src/sandbox/main.cpp"
             },
             headerunits = { }
+        },
+        module_mapper = {
+            ["cakeFramework:time"] = ref("cakeFramework", "module_mapper", "src/time.cppm"),
+            ["cakeFramework:internal"] = ref("cakeFramework", "module_mapper", "src/internal.cppm"),
+            ["src/sandbox/main.cpp"] = {
+                deps = {
+                    cakeFramework = {
+                        unique = false,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework"
+                    },
+                    std = {
+                        unique = false,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "std"
+                    }
+                },
+                objectfile = "build/.objs/a/linux/x86_64/release/src/sandbox/main.cpp.o",
+                sourcealias = true,
+                sourcefile = "src/sandbox/main.cpp"
+            },
+            ["/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"] = {
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/interfaces/0f82986d/std.compat.pcm",
+                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm.o",
+                interface = true,
+                method = "by-name",
+                deps = {
+                    std = {
+                        unique = false,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "std"
+                    }
+                },
+                name = "std.compat",
+                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm",
+                sourcealias = true
+            },
+            std = ref("std", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.cppm"),
+            ["src/component.cppm"] = {
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/31c638a4/cakeFramework_PARTITION_component.pcm",
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/component.cppm.o",
+                interface = false,
+                method = "by-name",
+                deps = { },
+                name = "cakeFramework:component",
+                sourcefile = "src/component.cppm",
+                sourcealias = true
+            },
+            ["src/game.cppm"] = {
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/fdc578c4/cakeFramework_PARTITION_game.pcm",
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/game.cppm.o",
+                interface = false,
+                method = "by-name",
+                deps = {
+                    ["cakeFramework:internal"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:internal"
+                    },
+                    std = {
+                        unique = false,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "std"
+                    }
+                },
+                name = "cakeFramework:game",
+                sourcefile = "src/game.cppm",
+                sourcealias = true
+            },
+            ["std.compat"] = ref("std", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"),
+            ["cakeFramework:component"] = ref("cakeFramework", "module_mapper", "src/component.cppm"),
+            ["src/cakeFramework.cppm"] = {
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/interfaces/cf8107ef/cakeFramework.pcm",
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/cakeFramework.cppm.o",
+                interface = true,
+                method = "by-name",
+                deps = {
+                    ["cakeFramework:time"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:time"
+                    },
+                    ["cakeFramework:internal"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:internal"
+                    },
+                    ["cakeFramework:entity"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:entity"
+                    },
+                    ["cakeFramework:component"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:component"
+                    },
+                    ["cakeFramework:game"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:game"
+                    }
+                },
+                name = "cakeFramework",
+                sourcefile = "src/cakeFramework.cppm",
+                sourcealias = true
+            },
+            ["src/internal.cppm"] = {
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/16415e5d/cakeFramework_PARTITION_internal.pcm",
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/internal.cppm.o",
+                interface = false,
+                method = "by-name",
+                deps = {
+                    std = {
+                        unique = false,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "std"
+                    },
+                    ["cakeFramework:time"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:time"
+                    },
+                    ["cakeFramework:entity"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:entity"
+                    }
+                },
+                name = "cakeFramework:internal",
+                sourcefile = "src/internal.cppm",
+                sourcealias = true
+            },
+            ["src/entity.cppm"] = {
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/4e652fb3/cakeFramework_PARTITION_entity.pcm",
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/entity.cppm.o",
+                interface = false,
+                method = "by-name",
+                deps = {
+                    ["cakeFramework:component"] = {
+                        unique = true,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "cakeFramework:component"
+                    },
+                    std = {
+                        unique = false,
+                        method = "by-name",
+                        headerunit = false,
+                        key = false,
+                        name = "std"
+                    }
+                },
+                name = "cakeFramework:entity",
+                sourcefile = "src/entity.cppm",
+                sourcealias = true
+            },
+            ["/usr/lib/llvm-20/share/libc++/v1/std.cppm"] = {
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/interfaces/3cce8c51/std.pcm",
+                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
+                interface = true,
+                method = "by-name",
+                deps = { },
+                name = "std",
+                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.cppm",
+                sourcealias = true
+            },
+            ["cakeFramework:entity"] = ref("cakeFramework", "module_mapper", "src/entity.cppm"),
+            ["cakeFramework:game"] = ref("cakeFramework", "module_mapper", "src/game.cppm"),
+            cakeFramework = ref("cakeFramework", "module_mapper", "src/cakeFramework.cppm"),
+            ["src/time.cppm"] = {
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/8a1b7b88/cakeFramework_PARTITION_time.pcm",
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/time.cppm.o",
+                interface = false,
+                method = "by-name",
+                deps = { },
+                name = "cakeFramework:time",
+                sourcefile = "src/time.cppm",
+                sourcealias = true
+            }
+        },
+        sourcebatch_sum = "a2337f90",
+        ["c++.build.sourcebatch"] = {
+            rulename = "c++.build",
+            objectfiles = {
+                "build/.objs/a/linux/x86_64/release/src/sandbox/main.cpp.o"
+            },
+            sourcekind = "cxx",
+            sourcefiles = {
+                "src/sandbox/main.cpp"
+            },
+            dependfiles = {
+                "build/.deps/a/linux/x86_64/release/src/sandbox/main.cpp.o.d"
+            }
+        },
+        ["c++.modules"] = {
+            ["src/cakeFramework.cppm"] = {
+                interface = true,
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/cakeFramework.cppm.o",
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/interfaces/cf8107ef/cakeFramework.pcm",
+                sourcefile = "src/cakeFramework.cppm",
+                method = "by-name",
+                name = "cakeFramework",
+                deps = ref("a", "module_mapper", "src/cakeFramework.cppm", "deps")
+            },
+            ["src/internal.cppm"] = {
+                interface = false,
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/internal.cppm.o",
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/16415e5d/cakeFramework_PARTITION_internal.pcm",
+                sourcefile = "src/internal.cppm",
+                method = "by-name",
+                name = "cakeFramework:internal",
+                deps = ref("a", "module_mapper", "src/internal.cppm", "deps")
+            },
+            ["src/sandbox/main.cpp"] = {
+                sourcefile = "src/sandbox/main.cpp",
+                objectfile = "build/.objs/a/linux/x86_64/release/src/sandbox/main.cpp.o",
+                deps = ref("a", "module_mapper", "src/sandbox/main.cpp", "deps")
+            },
+            ["/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm"] = {
+                interface = true,
+                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm.o",
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/interfaces/0f82986d/std.compat.pcm",
+                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm",
+                method = "by-name",
+                name = "std.compat",
+                deps = ref("a", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.compat.cppm", "deps")
+            },
+            ["src/component.cppm"] = {
+                interface = false,
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/component.cppm.o",
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/31c638a4/cakeFramework_PARTITION_component.pcm",
+                sourcefile = "src/component.cppm",
+                method = "by-name",
+                name = "cakeFramework:component",
+                deps = ref("a", "module_mapper", "src/component.cppm", "deps")
+            },
+            ["src/game.cppm"] = {
+                interface = false,
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/game.cppm.o",
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/fdc578c4/cakeFramework_PARTITION_game.pcm",
+                sourcefile = "src/game.cppm",
+                method = "by-name",
+                name = "cakeFramework:game",
+                deps = ref("a", "module_mapper", "src/game.cppm", "deps")
+            },
+            ["src/entity.cppm"] = {
+                interface = false,
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/entity.cppm.o",
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/4e652fb3/cakeFramework_PARTITION_entity.pcm",
+                sourcefile = "src/entity.cppm",
+                method = "by-name",
+                name = "cakeFramework:entity",
+                deps = ref("a", "module_mapper", "src/entity.cppm", "deps")
+            },
+            ["/usr/lib/llvm-20/share/libc++/v1/std.cppm"] = {
+                interface = true,
+                objectfile = "build/.objs/std/linux/x86_64/release/usr/lib/llvm-20/share/libc++/v1/std.cppm.o",
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/interfaces/3cce8c51/std.pcm",
+                sourcefile = "/usr/lib/llvm-20/share/libc++/v1/std.cppm",
+                method = "by-name",
+                name = "std",
+                deps = ref("a", "module_mapper", "/usr/lib/llvm-20/share/libc++/v1/std.cppm", "deps")
+            },
+            ["src/time.cppm"] = {
+                interface = false,
+                objectfile = "build/.objs/cakeFramework/linux/x86_64/release/src/time.cppm.o",
+                bmifile = "build/.gens/a/linux/x86_64/release/rules/bmi/cache/implementation/8a1b7b88/cakeFramework_PARTITION_time.pcm",
+                sourcefile = "src/time.cppm",
+                method = "by-name",
+                name = "cakeFramework:time",
+                deps = ref("a", "module_mapper", "src/time.cppm", "deps")
+            }
         }
     }
 }
