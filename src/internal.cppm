@@ -1,3 +1,5 @@
+// Copyright 2025 Caleb Whitmer
+
 module cakeFramework:internal;
 import :entity;
 import :time;

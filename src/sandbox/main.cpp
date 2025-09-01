@@ -1,10 +1,3 @@
-/*
- * TODO:
- * 
- * - Internal partitions
- * 
- */
-
 // Copyright 2025 Caleb Whitmer
 
 #include <SFML/Graphics.hpp>

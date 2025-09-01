@@ -1,12 +1,12 @@
 {
     packages = {
+        "/home/seth/.xmake/packages/u/util-macros/1.20.0/dac7ee58799c4734aeca7a2f3cac74ac",
+        "/home/seth/.xmake/packages/x/xcb-proto/1.17.0/d42aa690e9664d9484630a5e4309b54e",
         "/home/seth/.xmake/packages/m/m4/1.4.19/8b7c7260096844c1a8b1c8d773e64b3d",
         "/home/seth/.xmake/packages/l/libtool/2.5.4/a39f42a4cf63482dafd96ea22a05e4c1",
         "/home/seth/.xmake/packages/a/autotools/latest/725e51fe81b74141ade9efbd3ccaf900",
         "/home/seth/.xmake/packages/g/gperf/3.2.1/efebb5f5e634400e95353d8b19c09308",
-        "/home/seth/.xmake/packages/s/sfml/3.0.1/41b5ddaf28be4fcc90226276a3eb169e",
-        "/home/seth/.xmake/packages/u/util-macros/1.20.0/dac7ee58799c4734aeca7a2f3cac74ac",
-        "/home/seth/.xmake/packages/x/xcb-proto/1.17.0/d42aa690e9664d9484630a5e4309b54e",
-        "/home/seth/.xmake/packages/e/eudev/v3.2.14/b29a39ff41ca457e837aea66c9d9b121"
+        "/home/seth/.xmake/packages/e/eudev/v3.2.14/b29a39ff41ca457e837aea66c9d9b121",
+        "/home/seth/.xmake/packages/s/sfml/3.0.1/41b5ddaf28be4fcc90226276a3eb169e"
     }
 }

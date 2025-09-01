@@ -1,6 +1,5 @@
 {
     cmdlines = {
-        "xmake ",
         "xmake run -q",
         "xmake ",
         "xmake run -q",
@@ -64,6 +63,7 @@
         "xmake run -q",
         "xmake ",
         "xmake run -q",
+        "xmake clean",
         "xmake clean"
     }
 }

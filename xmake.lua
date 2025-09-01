@@ -1,9 +1,4 @@
---[[
-TODO:
-
-- Setup output to be a dependency of a "testing" file so that the output is a .a
-  file
-]]
+-- Copyright 2025 Caleb Whitmer
 
 -- Source Files
 units = "src/sandbox/*.cpp"
@@ -14,10 +9,8 @@ set_languages("c++latest")
 set_runtimes("c++_static")
 set_config("sdk", "/usr/lib/llvm-20/")
 
-
 -- Latest SFML version
 add_requires("sfml 3.0.1")
--- add_requires("sfml")
 
 -- Build std module
 target("std")
@@ -41,9 +34,9 @@ target("a")
 	set_extension(".out")
 
 	add_deps("std")
-
 	add_deps("cakeFramework")
 
 	add_packages("sfml")
 
 	add_files(units)
+	
