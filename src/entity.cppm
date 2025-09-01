@@ -15,9 +15,6 @@ import :component;
 
 import std;
 
-// Root Entity is saved on instantiation and used to update everything 
-// 
-
 /**
  * @brief      Entity instances are empty by default. Developers can add
  *             Components to the Entity to provide functionality.
@@ -26,6 +23,7 @@ import std;
  */
 class Entity final {
     friend void refresh__(void);
+    friend class Entity_Root_Manager;
 
     inline static Entity* root_ = nullptr;
 
@@ -33,6 +31,14 @@ class Entity final {
     std::unordered_set<Entity*> children_;
 
     std::unordered_map<std::type_index, Component*> components_;
+
+    void setParent_(Entity* parent) {
+        // Insert this into the new parent's children set
+        parent->children_.insert(this);
+
+        // Set the new parent
+        parent_ = parent;
+    }
 
     /**
      * @brief      Update system
@@ -87,11 +93,13 @@ class Entity final {
      * @brief      Constructs a new instance without a parent (root node)
      */
     Entity(void) {
-        // Set the root entity pointer to point to this instance.
+        // Finish here if this is the root entity is being set
         if (nullptr == root_)
-            root_ = this;
-        else
-            throw std::runtime_error("Entity::Entity(void) ~~~ Dangling Entity: No more than one root Entity is allowed. Try giving this Entity a parent.");
+            return;
+
+        // Otherwise set the parent of the current instance to be the root
+        // Entity
+        setParent_(root_);
     }
 
     /**
@@ -100,19 +108,8 @@ class Entity final {
      *
      * @param      parent  The parent which will "adopt" the new instance
      */
-    Entity(Entity* parent) {
-        if (parent_ == parent or nullptr == parent)
-            return;
-
-        // Remove this from the old parent's children set
-        if (parent_ != nullptr)
-            parent_->children_.erase(this);
-
-        // Insert this into the new parent's children set
-        parent->children_.insert(this);
-
-        // Set the new parent
-        parent_ = parent;
+    Entity(Entity& parent) {
+        setParent_(&parent);
     }
 
     /**
@@ -152,7 +149,10 @@ class Entity final {
         if (!insertionState.second)
             return nullptr;
 
+        // Set the Entity pointer of the Component to point to this instance
         insertionState.first->second->entity = this;
+
+        // Call the start function of the Component
         insertionState.first->second->start_();
 
         // Otherwise return a pointer to the new component
@@ -203,3 +203,18 @@ class Entity final {
         return static_cast<T*>(itToComponent->second);
     }
 };
+
+/**
+ * @brief      This class exists only to manage the memory allocated for the
+ *             static root Entity instance.
+ */
+class Entity_Root_Manager {
+ public:
+    Entity_Root_Manager() {
+        Entity::root_ = new Entity();
+    }
+
+    ~Entity_Root_Manager(void) {
+        delete Entity::root_;
+    }
+} instance__;

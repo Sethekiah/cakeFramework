@@ -12,12 +12,12 @@
 import std;
 import cakeFramework;
 
-class TestComp final : public Component {
-	void start() {
+class AComp final : public Component {
+ 	void start() {
+		std::cout << "A start!" << std::endl;
 	}
 
 	void update() {
-
 	}
 
 	void physicsUpdate() {
@@ -35,18 +35,19 @@ int main(int argc, char const *argv[])
 
 
 	Entity a;
-	a.addComponent<TestComp>();
-	Entity b(&a);
+	a.addComponent<AComp>();
+	Entity b;
 
 
 	Game::loop([&](){
-		if (window.isOpen()) {
-			while (const std::optional event = window.pollEvent()) {
-				if (event->is<sf::Event::Closed>())
-					window.close();
-			}
-		} else
+		if (!window.isOpen())
 			Game::end();
+	
+		while (const std::optional event = window.pollEvent()) {
+			if (event->is<sf::Event::Closed>())
+				window.close();
+		}
+	
 
 		window.clear();
 		window.display();
