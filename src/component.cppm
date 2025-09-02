@@ -1,5 +1,4 @@
 // Copyright 2025 Caleb Whitmer
-
 export module cakeFramework:component;
 
 // Forward declarations of Component and Entity classes

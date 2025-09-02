@@ -1,5 +1,4 @@
 // Copyright 2025 Caleb Whitmer
-
 module;
 
 // Forward declaration of main class so as to allow it friend access
