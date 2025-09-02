@@ -1,9 +1,3 @@
-/*
- * TODO:
- * 
- * - add enabling and disabling
- */
-
 // Copyright 2025 Caleb Whitmer
 
 export module cakeFramework:component;
@@ -25,6 +19,8 @@ class Component {
    bool didAwake_ = 0;
    bool didStart_ = 0;
 
+   bool isEnabled_ = 1;
+
 	// System functions
     virtual void awake(void) {}
     virtual void start(void) {}
@@ -34,6 +30,8 @@ class Component {
 
     virtual void onGameEnd(void) {}
     virtual void onDestroy(void) {}
+    virtual void onDisable(void) {}
+    virtual void onEnable(void) {}
 
  protected:
     // Pointer to the Entity instance which owns the current Component instance
@@ -42,6 +40,8 @@ class Component {
 
     const bool& didAwake = didAwake_;
     const bool& didStart = didStart_;
+
+    const bool& isEnabled = isEnabled_;
 
     // Class Entity can only access up to protected members. These are declared
     // here so that Entities can call System functions
@@ -53,12 +53,36 @@ class Component {
 
     inline virtual void onGameEnd_(void) final { onGameEnd(); }
     inline virtual void onDestroy_(void) final { onDestroy(); }
+    inline virtual void onDisable_(void) final { onDisable(); }
+    inline virtual void onEnable_(void) final { onEnable(); }
 
  public:
     // Virtual destructor is required for memory allocation purposes. It is
     // declared this way in order to make component and abstract class without
     // forcing subclasses from defining any specific function.
     virtual ~Component(void) = 0;
+
+    /**
+     * @brief      Enable the Component.
+     */
+    inline virtual void enable() {
+      if (isEnabled_)
+         return;
+
+      isEnabled_ = 1;
+      onEnable_();
+    }
+
+    /**
+     * @brief      Disable the Component.
+     */
+    inline virtual void disable() {
+      if (!isEnabled_)
+         return;
+
+      isEnabled_ = 0;
+      onDisable_();
+    }
 };
 
 // Definition of pure virtual destructor to be inherited by all subclasses

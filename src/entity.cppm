@@ -1,12 +1,3 @@
-/*
- * TODO:
- *
- * - OnEnable
- * - OnDisable
- * - OnEntityEnable
- * - OnEntityDisable
- */
-
 // Copyright 2025 Caleb Whitmer
 export module cakeFramework:entity;
 import :component;
@@ -21,11 +12,9 @@ import std;
  */
 class Entity final {
     friend class Internal;
-    // friend void refresh__(void);
-    // friend void end__(void);
+    friend class Entity_Root_Manager;
 
     friend void destroy(Entity& instance);
-    friend class Entity_Root_Manager;
 
     inline static Entity* root_ = nullptr;
 
@@ -33,6 +22,8 @@ class Entity final {
     std::unordered_set<Entity*> children_;
 
     std::unordered_map<std::type_index, Component*> components_;
+
+    bool isEnabled_ = 1;
 
     /**
      * @brief      Sets the parent of the current instance.
@@ -48,12 +39,18 @@ class Entity final {
     }
 
     /**
-     * @brief      Update system
+     * @brief      Update system - called once per frame
      */
     void update_(void) {
-        // Call the update function across all Components which belong to the
-        // current Entity
-        std::for_each(components_.begin(), components_.end(), [](auto& it){
+        // Do not call system if Entity is disabled
+        if (!isEnabled_)
+            return;
+
+        for (auto& it : components_) {
+            // Do not call system if Component is disabled
+            if (!it.second->isEnabled)
+                continue;
+
             // If the Start call of the current Component has not been called
             // yet, call it
             if (!(it.second->didStart_)) {
@@ -62,76 +59,159 @@ class Entity final {
             }
 
             it.second->update_();
-        });
+        }
 
-        // Call the update function across all children of the current Entity
-        std::for_each(children_.begin(), children_.end(), [](auto& it){
+        for (auto& it : children_) {
             it->update_();
-        });
+        }
     }
 
     /**
-     * @brief      Physics Update system
+     * @brief      Physics Update system - called 60 times per second
      */
     void physicsUpdate_(void) {
-        // Call the update function across all Components which belong to the
-        // current Entity
-        std::for_each(components_.begin(), components_.end(), [](auto& it){
-            it.second->physicsUpdate_();
-        });
+        // Do not call system if Entity is disabled
+        if (!isEnabled_)
+            return;
 
-        // Call the update function across all children of the current Entity
-        std::for_each(children_.begin(), children_.end(), [](auto& it){
+        for (auto& it : components_) {
+            // Do not call system if Component is disabled
+            if (!it.second->isEnabled)
+                continue;
+
+            it.second->physicsUpdate_();
+        }
+
+        for (auto& it : children_) {
             it->physicsUpdate_();
-        });
+        }
     }
 
     /**
-     * @brief      Graphics Update system
+     * @brief      Graphics Update system - called once per frame - specifically
+     *             meant for draw calls
      */
     void graphicsUpdate_(void) {
-        // Call the update function across all Components which belong to the
-        // current Entity
-        std::for_each(components_.begin(), components_.end(), [](auto& it){
-            it.second->graphicsUpdate_();
-        });
+        // Do not call system if Entity is disabled
+        if (!isEnabled_)
+            return;
 
-        // Call the update function across all children of the current Entity
-        std::for_each(children_.begin(), children_.end(), [](auto& it){
+        for (auto& it : components_) {
+            // Do not call system if Component is disabled
+            if (!it.second->isEnabled)
+                continue;
+
+            it.second->graphicsUpdate_();
+        }
+
+        for (auto& it : children_) {
             it->graphicsUpdate_();
-        });
+        }
     }
 
     /**
-     * @brief      onGameEnd system
+     * @brief      onGameEnd system - called only once when the game is ended
      */
     void onGameEnd_(void) {
-        // Call the onGameEnd function across all Components which belong to the
-        // current Entity
-        std::for_each(components_.begin(), components_.end(), [](auto& it){
-            it.second->onGameEnd_();
-        });
+        // Do not call system if Entity is disabled
+        if (!isEnabled_)
+            return;
 
-        // Call the onGameEnd function across all children of the current Entity
-        std::for_each(children_.begin(), children_.end(), [](auto& it){
+        for (auto& it : components_) {
+            // Do not call system if Component is disabled
+            if (!it.second->isEnabled)
+                continue;
+
+            it.second->onGameEnd_();
+        }
+
+        for (auto& it : children_) {
             it->onGameEnd_();
-        });
+        }
     }
 
+    /**
+     * @brief      onDestroy system - called when an Entity is destroyed
+     */
     void onDestroy_(void) {
-        // Call the onDestroy function across all Components which belong to the
-        // current Entity
-        std::for_each(components_.begin(), components_.end(), [](auto& it){
-            it.second->onDestroy_();
-        });
+        // Do not call system if Entity is disabled
+        if (!isEnabled_)
+            return;
 
-        // Call the onDestroy function across all children of the current Entity
-        std::for_each(children_.begin(), children_.end(), [](auto& it){
+        for (auto& it : components_) {
+            // Do not call system if Component is disabled
+            if (!it.second->isEnabled)
+                continue;
+
+            it.second->onDestroy_();
+        }
+
+        for (auto& it : children_) {
             it->onDestroy_();
-        });
+        }
+    }
+
+    /**
+     * @brief      Disable any Components that aren't already disabled - called
+     *             when an Entity is disabled
+     */
+    void onEntityDisable_(void) {
+        for (auto& it : components_) {
+            // Do not call system if Component is already disabled
+            if (!it.second->isEnabled)
+                continue;
+
+            it.second->onDisable_();
+        }
+
+        for (auto& it : children_) {
+            it->onEntityDisable_();
+        }
+    }
+
+    /**
+     * @brief      Re-enable only the Components which were previously enabled -
+     *             called when an entity is enabled
+     */
+    void onEntityEnable_(void) {
+        for (auto& it : components_) {
+            // Do not call system if Component was previously disabled
+            if (!it.second->isEnabled)
+                continue;
+
+            it.second->onEnable_();
+        }
+
+        for (auto& it : children_) {
+            it->onEntityEnable_();
+        }
     }
 
  public:
+    const bool& isEnabled = isEnabled_;
+
+    /**
+     * @brief      Enable the Entity.
+     */
+    inline virtual void enable() {
+      if (isEnabled_)
+         return;
+
+      isEnabled_ = 1;
+      onEntityEnable_();
+    }
+
+    /**
+     * @brief      Disable the Entity.
+     */
+    inline virtual void disable() {
+      if (!isEnabled_)
+         return;
+
+      isEnabled_ = 0;
+      onEntityDisable_();
+    }
+
     /**
      * @brief      Constructs a new instance without a parent (root node)
      */

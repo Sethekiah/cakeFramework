@@ -21,22 +21,23 @@ class AComp final : public Component {
 	}
 
 	void update() {
+		std::cout << "Update!" << std::endl;
 	}
 
 	void physicsUpdate() {
-
+		std::cout << "P Update!" << std::endl;
 	}
 
 	void graphicsUpdate() {
-
+		std::cout << "G Update!" << std::endl;
 	}
 
-	void onGameEnd() {
-		std::cout << "Bye Bye!" << std::endl;
+	void onDisable() {
+		std::cout << "Disabled!" << std::endl;
 	}
 
-	void onDestroy() {
-		std::cout << "Killed!" << std::endl;
+	void onEnable() {
+		std::cout << "Enabled!" << std::endl;
 	}
 };
 
@@ -45,15 +46,19 @@ int main(int argc, char const *argv[])
 	// sf::RenderWindow window(sf::VideoMode({800, 600}), "cakeFramework", sf::Style::Close);
 
 	Entity a;
-	a.addComponent<AComp>()->name = "Caleb";	
+	a.addComponent<AComp>()->name = "a";	
 
 	Entity b(a);
-	b.addComponent<AComp>()->name = "eee";
+	b.addComponent<AComp>()->name = "b";
+	
+	a.disable();
+
+	// Entity b(a);
+	// b.addComponent<AComp>()->name = "eee";
 
 	// a.removeAllComponents();
 
 	Game::loop([&](){
-		destroy(b);
 		Game::end();
 		// if (!window.isOpen())
 		// 	Game::end();
