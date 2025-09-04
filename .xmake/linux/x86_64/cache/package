@@ -1,9 +1,11 @@
 {
     sfml = {
-        version = "3.0.1",
-        linkdirs = {
-            "/home/seth/.xmake/packages/s/sfml/3.0.1/41b5ddaf28be4fcc90226276a3eb169e/lib",
-            "/home/seth/.xmake/packages/e/eudev/v3.2.14/b29a39ff41ca457e837aea66c9d9b121/lib"
+        sysincludedirs = {
+            "/home/seth/.xmake/packages/s/sfml/3.0.1/41b5ddaf28be4fcc90226276a3eb169e/include",
+            "/usr/include/freetype2",
+            "/usr/include/libpng16",
+            "/home/seth/.xmake/packages/e/eudev/v3.2.14/b29a39ff41ca457e837aea66c9d9b121/include",
+            "/usr/include/X11/dri"
         },
         libfiles = {
             "/home/seth/.xmake/packages/s/sfml/3.0.1/41b5ddaf28be4fcc90226276a3eb169e/lib/libsfml-graphics-s.a",
@@ -16,6 +18,28 @@
             "/usr/lib/x86_64-linux-gnu/libOpenGL.so",
             "/usr/lib/x86_64-linux-gnu/libGLX.so",
             "/usr/lib/x86_64-linux-gnu/libvorbisfile.a"
+        },
+        license = "zlib",
+        __components_deps = {
+            window = "system",
+            audio = "system",
+            network = "system",
+            graphics = {
+                "window",
+                "system"
+            }
+        },
+        __enabled = true,
+        defines = "SFML_STATIC",
+        static = true,
+        linkdirs = {
+            "/home/seth/.xmake/packages/s/sfml/3.0.1/41b5ddaf28be4fcc90226276a3eb169e/lib",
+            "/home/seth/.xmake/packages/e/eudev/v3.2.14/b29a39ff41ca457e837aea66c9d9b121/lib"
+        },
+        syslinks = {
+            "dl",
+            "rt",
+            "pthread"
         },
         envs = {
             PATH = {
@@ -33,83 +57,24 @@
                 "/home/seth/.xmake/packages/a/autotools/latest/725e51fe81b74141ade9efbd3ccaf900/bin",
                 "/home/seth/.xmake/packages/g/gperf/3.2.1/efebb5f5e634400e95353d8b19c09308/bin"
             },
+            PYTHONPATH = {
+                "/home/seth/.xmake/packages/p/python/3.13.2/6f0877c41817458c86372123876fc685/lib/python3.13/site-packages"
+            },
             LD_LIBRARY_PATH = {
                 "/home/seth/.xmake/packages/l/libx11/1.8.12/a11f2c7a0e8b42f3bc2f6ee1f596833e/lib",
                 "/home/seth/.xmake/packages/m/m4/1.4.19/8b7c7260096844c1a8b1c8d773e64b3d/lib"
-            },
-            PYTHONPATH = {
-                "/home/seth/.xmake/packages/p/python/3.13.2/6f0877c41817458c86372123876fc685/lib/python3.13/site-packages"
             }
+        },
+        __components_orderlist = {
+            "graphics",
+            "window",
+            "audio",
+            "network",
+            "system"
         },
         installdir = "/home/seth/.xmake/packages/s/sfml/3.0.1/41b5ddaf28be4fcc90226276a3eb169e",
-        license = "zlib",
-        defines = "SFML_STATIC",
-        static = true,
-        components = {
-            system = {
-                links = "sfml-system-s",
-                syslinks = {
-                    "rt",
-                    "pthread"
-                }
-            },
-            graphics = {
-                links = "sfml-graphics-s"
-            },
-            __base = {
-                linkdirs = {
-                    "/home/seth/.xmake/packages/s/sfml/3.0.1/41b5ddaf28be4fcc90226276a3eb169e/lib",
-                    "/home/seth/.xmake/packages/e/eudev/v3.2.14/b29a39ff41ca457e837aea66c9d9b121/lib"
-                },
-                sysincludedirs = {
-                    "/home/seth/.xmake/packages/s/sfml/3.0.1/41b5ddaf28be4fcc90226276a3eb169e/include",
-                    "/usr/include/freetype2",
-                    "/usr/include/libpng16",
-                    "/home/seth/.xmake/packages/e/eudev/v3.2.14/b29a39ff41ca457e837aea66c9d9b121/include",
-                    "/usr/include/X11/dri"
-                },
-                links = {
-                    "freetype",
-                    "z",
-                    "Xcursor",
-                    "Xrandr",
-                    "Xrender",
-                    "X11",
-                    "udev",
-                    "Xi",
-                    "Xext",
-                    "Xfixes",
-                    "xcb",
-                    "Xau",
-                    "Xdmcp",
-                    "OpenGL",
-                    "GLX",
-                    "FLAC",
-                    "vorbisfile",
-                    "vorbisenc",
-                    "vorbis",
-                    "ogg"
-                },
-                defines = "SFML_STATIC"
-            },
-            audio = {
-                links = "sfml-audio-s"
-            },
-            window = {
-                links = "sfml-window-s",
-                syslinks = "dl"
-            },
-            network = {
-                links = "sfml-network-s"
-            }
-        },
-        sysincludedirs = {
-            "/home/seth/.xmake/packages/s/sfml/3.0.1/41b5ddaf28be4fcc90226276a3eb169e/include",
-            "/usr/include/freetype2",
-            "/usr/include/libpng16",
-            "/home/seth/.xmake/packages/e/eudev/v3.2.14/b29a39ff41ca457e837aea66c9d9b121/include",
-            "/usr/include/X11/dri"
-        },
+        __requirestr = "sfml 3.0.1",
+        version = "3.0.1",
         links = {
             "sfml-graphics-s",
             "sfml-window-s",
@@ -137,28 +102,63 @@
             "vorbis",
             "ogg"
         },
-        __components_deps = {
-            audio = "system",
-            network = "system",
-            window = "system",
+        components = {
+            window = {
+                links = "sfml-window-s",
+                syslinks = "dl"
+            },
+            audio = {
+                links = "sfml-audio-s"
+            },
+            __base = {
+                linkdirs = {
+                    "/home/seth/.xmake/packages/s/sfml/3.0.1/41b5ddaf28be4fcc90226276a3eb169e/lib",
+                    "/home/seth/.xmake/packages/e/eudev/v3.2.14/b29a39ff41ca457e837aea66c9d9b121/lib"
+                },
+                defines = "SFML_STATIC",
+                links = {
+                    "freetype",
+                    "z",
+                    "Xcursor",
+                    "Xrandr",
+                    "Xrender",
+                    "X11",
+                    "udev",
+                    "Xi",
+                    "Xext",
+                    "Xfixes",
+                    "xcb",
+                    "Xau",
+                    "Xdmcp",
+                    "OpenGL",
+                    "GLX",
+                    "FLAC",
+                    "vorbisfile",
+                    "vorbisenc",
+                    "vorbis",
+                    "ogg"
+                },
+                sysincludedirs = {
+                    "/home/seth/.xmake/packages/s/sfml/3.0.1/41b5ddaf28be4fcc90226276a3eb169e/include",
+                    "/usr/include/freetype2",
+                    "/usr/include/libpng16",
+                    "/home/seth/.xmake/packages/e/eudev/v3.2.14/b29a39ff41ca457e837aea66c9d9b121/include",
+                    "/usr/include/X11/dri"
+                }
+            },
+            system = {
+                links = "sfml-system-s",
+                syslinks = {
+                    "rt",
+                    "pthread"
+                }
+            },
+            network = {
+                links = "sfml-network-s"
+            },
             graphics = {
-                "window",
-                "system"
+                links = "sfml-graphics-s"
             }
-        },
-        syslinks = {
-            "dl",
-            "rt",
-            "pthread"
-        },
-        __enabled = true,
-        __components_orderlist = {
-            "graphics",
-            "window",
-            "audio",
-            "network",
-            "system"
-        },
-        __requirestr = "sfml 3.0.1"
+        }
     }
 }

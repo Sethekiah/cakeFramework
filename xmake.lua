@@ -1,8 +1,9 @@
 -- Copyright 2025 Caleb Whitmer
 
 -- Source Files
-units = "src/sandbox/*.cpp"
 components = "src/*.cppm"
+sandbox_units = "src/sandbox/*.cpp"
+sandbox_components = "src/sandbox/*.cppm"
 
 set_toolchains("clang")
 set_languages("c++latest")
@@ -38,5 +39,6 @@ target("a")
 
 	add_packages("sfml")
 
-	add_files(units)
+	add_files(sandbox_units)
+	add_files(sandbox_components)
 	

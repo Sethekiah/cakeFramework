@@ -1,22 +1,366 @@
+/*
+ * TODO:
+ * 
+ * - Figure out ways to make this code more efficient
+ * 	- Dirty flags or something?
+ */
+
 // Copyright 2025 Caleb Whitmer
 module;
-
-/*
- * https://www.sfml-dev.org/documentation/3.0.1/classsf_1_1Transform.html
- * https://www.sfml-dev.org/documentation/3.0.1/classsf_1_1Vector2.html
- * https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Transform.html
- */
 
 #include<SFML/Graphics.hpp>
 
 export module cakeFramework:transform;
+import :entity;
 import :component;
 
 import std;
 
+/**
+ * @brief      Swap the components of a vector
+ *
+ * @param[in]  vector  The vector
+ *
+ * @return     The vector with the x & y components swapped
+ */
+sf::Vector2f ComponentSwap__(const sf::Vector2f& vector) {
+	float yVal = vector.y;
+	return sf::Vector2f{
+		yVal,
+		vector.x
+	};
+}
+
+/**
+ * @brief      Internal struct used to represent and manipulate transform data.
+ *             It essentially works as an unrolled affine matrix, where scale,
+ *             rotation, and position are separated.
+ */
+struct TransformData__ {
+	sf::Vector2f position	{0, 0};
+	sf::Vector2f rotation	{1, 0};
+	sf::Vector2f scale		{1, 1};
+
+	/**
+	 * @brief      Gets a sfml transform object representing the transform
+	 *             stored within this struct
+	 *
+	 * @return     The sfml transform object
+	 */
+	sf::Transform getSFMLTransform() {
+		static sf::Transformable out;
+		out.setPosition(position);
+		out.setRotation(rotation.angle());
+		out.setScale(scale);
+		return out.getTransform();
+	}
+
+	/**
+	 * @brief      Gets the inverse of the current transform data instance.
+	 *
+	 * @return     The inverse.
+	 */
+	TransformData__ getInverse() {
+		static const float epislon = 0.001f;
+
+		TransformData__ out;
+
+		// Invert the rotation
+		out.rotation = rotation.componentWiseMul({1, -1});
+
+		// Invert the components of the scale if they are not equal to zero
+		out.scale = sf::Vector2f{
+			(scale.x >= epislon) ? 1.f / scale.x : scale.x, 
+			(scale.y >= epislon) ? 1.f / scale.y : scale.y 
+		};
+
+		// Get the scaled position and rotate it by the inverted rotation to
+		// find the inverted position
+		sf::Vector2f scaledPos = (out.scale.componentWiseMul(-1.f * position));
+		out.position = sf::Vector2f{
+			out.rotation.componentWiseMul({1, -1}).dot(scaledPos),
+			ComponentSwap__(out.rotation).dot(scaledPos)
+		};
+
+		return out;
+	}
+
+	/**
+	 * @brief      Combine the transforms of two TransformData structs
+	 *
+	 * @param[in]  lhs   The left hand side
+	 * @param[in]  rhs   The right hand side
+	 *
+	 * @return     The result of the multiplication
+	 */
+	friend TransformData__ operator*(TransformData__ lhs, const TransformData__& rhs) {
+		// Scale the lhs position by the rhs scale
+		sf::Vector2f scaledPos = lhs.scale.componentWiseMul(rhs.position);
+
+		// Rotate the scaled lhs position and add that value to the original 
+		lhs.position += sf::Vector2f{
+			lhs.rotation.componentWiseMul({1, -1}).dot(scaledPos),
+			ComponentSwap__(lhs.rotation).dot(scaledPos)
+		};
+
+		// Combine the rotations of the lhs and rhs
+		lhs.rotation = sf::Vector2f{
+			lhs.rotation.componentWiseMul({1, -1}).dot(rhs.rotation),
+			-lhs.rotation.componentWiseMul({1, -1}).dot(rhs.rotation.perpendicular())
+		};
+
+		// Combine the scales of the lhs and rhs
+		lhs.scale = lhs.scale.componentWiseMul(rhs.scale);
+
+		// Return the updated lhs
+		return lhs;
+	}
+};
+
 export class Transform final : public Component {
  public:
+ 	// Delete origin functions because I do not like them
+ 	sf::Vector2f getOrigin(void) = delete;
+ 	void setOrigin(sf::Vector2f) = delete;
+
+ 	/**
+ 	 * @brief      Gets the local transform.
+ 	 *
+ 	 * @return     The local transform.
+ 	 */
+ 	inline sf::Transform getLocalTransform(void) {
+ 		return localTransform_.getSFMLTransform();
+ 	}
+
+ 	/**
+ 	 * @brief      Gets the inverse of the local transform.
+ 	 *
+ 	 * @return     The inverse of the local transform.
+ 	 */
+ 	inline sf::Transform getInverseLocalTransform(void) {
+ 		return localTransform_.getInverse().getSFMLTransform();
+ 	}
+
+ 	/**
+ 	 * @brief      Sets the local position.
+ 	 *
+ 	 * @param[in]  position  The position
+ 	 */
+ 	inline Transform* setLocalPosition(const sf::Vector2f& position) {
+ 		localTransform_.position = position;
+ 		return this;
+ 	}
+
+ 	/**
+ 	 * @brief      Gets the local position.
+ 	 *
+ 	 * @return     The local position.
+ 	 */
+ 	inline sf::Vector2f getLocalPosition(void) {
+ 		return localTransform_.position;
+ 	}
+
+ 	/**
+ 	 * @brief      Sets the local scale.
+ 	 *
+ 	 * @param[in]  scale  The scale
+ 	 */
+ 	inline Transform* setLocalScale(const sf::Vector2f& scale) {
+ 		localTransform_.scale = scale;
+ 		return this;
+ 	}
+
+ 	/**
+ 	 * @brief      Gets the local scale.
+ 	 *
+ 	 * @return     The local scale.
+ 	 */
+ 	inline sf::Vector2f getLocalScale(void) {
+ 		return localTransform_.scale;
+ 	}
+
+ 	/**
+ 	 * @brief      Sets the local rotation.
+ 	 *
+ 	 * @param[in]  rotation  The rotation
+ 	 */
+ 	inline Transform* setLocalRotation(const sf::Vector2f& rotation) {
+ 		localTransform_.rotation = rotation;
+ 		return this;
+ 	}
+
+ 	/**
+ 	 * @brief      Gets the local rotation.
+ 	 *
+ 	 * @return     The local rotation.
+ 	 */
+ 	inline sf::Vector2f getLocalRotation(void) {
+ 		return localTransform_.rotation;
+ 	}
+
+	/**
+	 * @brief      Gets the global transform.
+	 *
+	 * @return     The global transform.
+	 */
+	inline sf::Transform getTransform(void) {
+		return getTransformData_().getSFMLTransform();
+	} 	
+
+	/**
+	 * @brief      Gets the inverse of the global transform.
+	 *
+	 * @return     The inverse of the global transform.
+	 */
+	inline sf::Transform getInverseTransform(void) {
+		return getTransformData_().getInverse().getSFMLTransform();
+	}
+
+	/**
+	 * @brief      Sets the global position.
+	 *
+	 * @param[in]  position  The global position
+	 */
+	Transform* setPosition(const sf::Vector2f& position) {
+		// Get the parent transform and use it to calculate the desired
+		// transform
+		TransformData__ parentTransform = getParentGlobalTransformData_();
+		TransformData__ desiredTransform = (parentTransform * localTransform_);
+
+		// Set the desired data of the desired transform
+		desiredTransform.position = position;
+
+		// Calculate the new local transform to evaluate to the desired global
+		// transform
+		localTransform_ = parentTransform.getInverse() * desiredTransform;
+
+		return this;
+	}
+
+	/**
+	 * @brief      Gets the global position.
+	 *
+	 * @return     The global position.
+	 */
+	inline sf::Vector2f getPosition(void) {
+		return getTransformData_().position;
+	}
+
+	/**
+	 * @brief      Sets the global scale.
+	 *
+	 * @param[in]  scale  The global scale
+	 */
+	Transform* setScale(const sf::Vector2f& scale) {
+		// Get the parent transform and use it to calculate the desired
+		// transform
+		TransformData__ parentTransform = getParentGlobalTransformData_();
+		TransformData__ desiredTransform = (parentTransform * localTransform_);
+
+		// Set the desired data of the desired transform
+		desiredTransform.scale = scale;
+
+		// Calculate the new local transform to evaluate to the desired global
+		// transform
+		localTransform_ = parentTransform.getInverse() * desiredTransform;
+
+		return this;
+	}
+
+	/**
+	 * @brief      Gets the global scale.
+	 *
+	 * @return     The global scale.
+	 */
+	inline sf::Vector2f getScale(void) {
+		return getTransformData_().scale;
+	}
+
+	/**
+	 * @brief      Sets the global rotation.
+	 *
+	 * @param[in]  rotation  The global rotation
+	 */
+	Transform* setRotation(const sf::Vector2f& rotation) {
+		// Get the parent transform and use it to calculate the desired
+		// transform
+		TransformData__ parentTransform = getParentGlobalTransformData_();
+		TransformData__ desiredTransform = (parentTransform * localTransform_);
+
+		// Set the desired data of the desired transform
+		desiredTransform.rotation = rotation;
+
+		// Calculate the new local transform to evaluate to the desired global
+		// transform
+		localTransform_ = parentTransform.getInverse() * desiredTransform;
+
+		return this;
+	}
+
+	/**
+	 * @brief      Gets the global rotation.
+	 *
+	 * @return     The global rotation.
+	 */
+	inline sf::Vector2f getRotation(void) {
+		return getTransformData_().rotation;
+	}
 
  private:
+ 	TransformData__ localTransform_;
 
+ 	/**
+ 	 * @brief      Gets the global transform data by recursively combining the
+ 	 *             current local transform with the global transforms of all
+ 	 *             parents and grandparents and so on.
+ 	 *
+ 	 * @return     The global transform data.
+ 	 */
+ 	TransformData__ getTransformData_() {
+ 		// Get the parent of the current Entity
+ 		auto parent = entity->getParent();
+
+ 		for(;;) {
+ 			// If the current Entity has no parent then return its local matrix
+ 			if (!parent)
+ 				return localTransform_;
+
+ 			// If the parent has a Transform Component then recursively return
+ 			// it multiplied by the current local matrix
+	 		if(auto pTransform = parent->getComponent<Transform>())
+	 			return pTransform->getTransformData_() * localTransform_;
+
+	 		// Otherwise get the grandparent
+ 			parent = parent->getParent();
+ 		}
+ 	}
+
+ 	/**
+ 	 * @brief      Gets the global transform of the parent of the current
+ 	 *             entity.
+ 	 *
+ 	 * @return     The parent global transform data.
+ 	 */
+ 	TransformData__ getParentGlobalTransformData_() {
+ 		TransformData__ parentGlobalTransform;
+
+ 		// Get the global transform of the parent or alternatively a grandparent
+ 		// if they exist. Otherwise, return the local transform
+ 		auto parent = entity->getParent();
+ 		if (parent) {
+	 		for(;;) {
+	 			if (auto pTransform = parent->getComponent<Transform>()) {
+	 				parentGlobalTransform = pTransform->getTransformData_();
+	 				break;
+	 			}
+
+	 			parent = parent->getParent();
+
+	 			if (!parent)
+	 				break;
+	 		}
+ 		}
+
+ 		return parentGlobalTransform;
+ 	}
 };
