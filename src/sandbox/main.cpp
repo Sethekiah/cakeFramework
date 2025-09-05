@@ -5,11 +5,12 @@
  */
 
 // Copyright 2025 Caleb Whitmer
-
 #include <SFML/Graphics.hpp>
 
 import std;
 import cakeFramework;
+import testComp;
+import spriteRenderer;
 
 std::ostream& operator <<(std::ostream& os, const sf::Transform obj) {
 	auto matrix = obj.getMatrix();
@@ -28,41 +29,39 @@ std::ostream& operator <<(std::ostream& os, const sf::Vector2f obj) {
 
 int main(int argc, char const *argv[])
 {
-	// sf::RenderWindow window(sf::VideoMode({800, 600}), "cakeFramework", sf::Style::Close);
+	sf::RenderWindow window(sf::VideoMode({800, 600}), "cakeFramework", sf::Style::Close);
 
 	Entity a;
+	a.addComponent<SpriteRenderer>()
+		->setWindow(window);
 	a.addComponent<Transform>()
-		->setLocalPosition(sf::Vector2f{6, 9})
-		->setLocalRotation(sf::Vector2f{0.7071f, 0.7071f})
-		->setScale(sf::Vector2f{6, 7});
+		->setLocalRotation({0.5f, 0.866f})
+		->setLocalPosition({200, 200});
+	a.addComponent<TestComp>();
 
-	if (auto comp = a.getComponent<Transform>())
-		std::cout << comp->getLocalTransform() << std::endl;
-	
-
-	// Entity b(a);
-	// b.addComponent<Transform>()->setLocalPosition(sf::Vector2f{69, 0});
-
-	// Entity c(b);
-	// c.addComponent<Transform>()->setPosition(sf::Vector2f{4, 4});
-
-	// if (auto comp = b.getComponent<Transform>())
-	// 	std::cout << comp->getTransform() << std::endl;
+	Entity b(a);
+	b.addComponent<SpriteRenderer>()
+		->setWindow(window);
+	b.addComponent<Transform>()
+		->setLocalScale({0.25, 0.25})
+		->setLocalPosition({125, 0});
 
 
 	Game::loop([&](){
-		Game::end();
-		// while (const std::optional event = window.pollEvent()) {
-		// 	if (event->is<sf::Event::Closed>())
-		// 		window.close();
-		// }
+		while (const std::optional event = window.pollEvent()) {
+			if (event->is<sf::Event::Closed>())
+				window.close();
+		}
 
-		// if (!window.isOpen())
-		// 	Game::end();
+		if (!window.isOpen())
+			Game::end();
 	
 
-		// window.clear();
-		// window.display();
+		// Display the buffer first, then clear it. Render draw calls are made
+		// when the graphics update system is run at the start of each game
+		// loop.
+		window.display();
+		window.clear();
 	});
 
 	return 0;
