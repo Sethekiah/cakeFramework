@@ -382,6 +382,19 @@ class Entity final {
                 : std::make_optional<std::vector<T*>>(
                     std::move(componentVector));
     }
+
+    /**
+     * @brief      Gets the children.
+     *
+     * @return     An optional set, containing each child of the current
+     *             instance.
+     */
+    std::optional<std::unordered_set<Entity*>> getChildren(void) {
+        return (children_.size() == 0)
+                ? std::nullopt
+                : std::make_optional<std::unordered_set<Entity*>>(
+                    children_);
+    } 
 };
 
 /**

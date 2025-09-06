@@ -35,16 +35,18 @@ int main(int argc, char const *argv[])
 	a.addComponent<SpriteRenderer>()
 		->setWindow(window);
 	a.addComponent<Transform>()
-		->setLocalRotation({0.5f, 0.866f})
 		->setLocalPosition({200, 200});
 	a.addComponent<TestComp>();
 
 	Entity b(a);
-	b.addComponent<SpriteRenderer>()
+
+	Entity c(b);
+	c.addComponent<SpriteRenderer>()
 		->setWindow(window);
-	b.addComponent<Transform>()
+	c.addComponent<Transform>()
 		->setLocalScale({0.25, 0.25})
 		->setLocalPosition({125, 0});
+	c.addComponent<TestComp>();
 
 
 	Game::loop([&](){
