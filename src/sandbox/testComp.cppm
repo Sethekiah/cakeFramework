@@ -15,6 +15,6 @@ export class TestComp final : public Component {
 	void physicsUpdate() {
 		if (auto transform = entity->getComponent<Transform>())
 			transform
-				->rotate(sf::Vector2f{1.f, sf::degrees(30.f/60.f)});
+				->localRotate(sf::Vector2f{1.f, sf::degrees(30.f/60.f)});
 	}
 };

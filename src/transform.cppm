@@ -150,7 +150,7 @@ export class Transform final : public Component {
  		localTransform_.position = position;
 		
 		// Raise the transform dirty flag
-		isDirty_ = true;
+		wasChanged_ = true;
 		
  		return this;
  	}
@@ -173,7 +173,7 @@ export class Transform final : public Component {
  		localTransform_.scale = scale;
 		
 		// Raise the transform dirty flag
-		isDirty_ = true;
+		wasChanged_ = true;
 		
  		return this;
  	}
@@ -196,7 +196,7 @@ export class Transform final : public Component {
  		localTransform_.rotation = rotation;
 		
 		// Raise the transform dirty flag
-		isDirty_ = true;
+		wasChanged_ = true;
 
  		return this;
  	}
@@ -247,7 +247,7 @@ export class Transform final : public Component {
 		localTransform_ = parentTransform.getInverse() * desiredTransform;
 		
 		// Raise the transform dirty flag
-		isDirty_ = true;
+		wasChanged_ = true;
 
 		return this;
 	}
@@ -280,7 +280,7 @@ export class Transform final : public Component {
 		localTransform_ = parentTransform.getInverse() * desiredTransform;
 		
 		// Raise the transform dirty flag
-		isDirty_ = true;
+		wasChanged_ = true;
 
 		return this;
 	}
@@ -313,7 +313,7 @@ export class Transform final : public Component {
 		localTransform_ = parentTransform.getInverse() * desiredTransform;
 
 		// Raise the transform dirty flag
-		isDirty_ = true;
+		wasChanged_ = true;
 
 		return this;
 	}
@@ -334,6 +334,58 @@ export class Transform final : public Component {
 	 *
 	 * @return     This pointer to allow function chaining
 	 */
+	Transform* localTranslate(const sf::Vector2f& offset) {
+		localTransform_.position += offset;
+		
+		// Raise the transform dirty flag
+		wasChanged_ = true;
+
+		return this;
+	}
+
+	/**
+	 * @brief      Rotate the Transform by some angle
+	 *
+	 * @param[in]  angle  The angle
+	 *
+	 * @return     This pointer to allow function chaining
+	 */
+	Transform* localRotate(const sf::Vector2f& angle) {
+		localTransform_.rotation = sf::Vector2f{
+			localTransform_.rotation.componentWiseMul({1, -1}).dot(angle),
+			-localTransform_.rotation.componentWiseMul({1, -1})
+				.dot(angle.perpendicular())
+		};
+
+		// Raise the transform dirty flag
+		wasChanged_ = true;
+
+		return this;
+	}
+
+	/**
+	 * @brief      Scale the transform in global space by some scale multiplier
+	 *
+	 * @param[in]  scale  The scale
+	 *
+	 * @return     This pointer to allow function chaining
+	 */
+	Transform* localScale(const sf::Vector2f& scale) {
+		localTransform_.scale = localTransform_.scale.componentWiseMul(scale);
+
+		// Raise the transform dirty flag
+		wasChanged_ = true;
+
+		return this;
+	}
+
+	/**
+	 * @brief      Move the Transform in global space by some offset
+	 *
+	 * @param[in]  offset  The offset
+	 *
+	 * @return     This pointer to allow function chaining
+	 */
 	Transform* translate(const sf::Vector2f& offset) {
 		// Get the parent transform and use it to calculate the desired
 		// transform
@@ -348,13 +400,13 @@ export class Transform final : public Component {
 		localTransform_ = parentTransform.getInverse() * desiredTransform;
 		
 		// Raise the transform dirty flag
-		isDirty_ = true;
+		wasChanged_ = true;
 
 		return this;
 	}
 
 	/**
-	 * @brief      Rotate the Transform by some angle
+	 * @brief      Rotate the Transform in global space by some angle
 	 *
 	 * @param[in]  angle  The angle
 	 *
@@ -379,13 +431,13 @@ export class Transform final : public Component {
 		localTransform_ = parentTransform.getInverse() * desiredTransform;
 
 		// Raise the transform dirty flag
-		isDirty_ = true;
+		wasChanged_ = true;
 
 		return this;
 	}
 
 	/**
-	 * @brief      Scale the transform by some scale multiplier
+	 * @brief      Scale the transform in global space by some scale multiplier
 	 *
 	 * @param[in]  scale  The scale multiplier
 	 *
@@ -405,7 +457,7 @@ export class Transform final : public Component {
 		localTransform_ = parentTransform.getInverse() * desiredTransform;
 		
 		// Raise the transform dirty flag
-		isDirty_ = true;
+		wasChanged_ = true;
 
 		return this;
 	}
@@ -432,25 +484,31 @@ export class Transform final : public Component {
 
  private:
  	TransformData__ localTransform_;
- 	bool isDirty_ = true;
+ 	bool wasChanged_ = true;
  	TransformData__ cachedGlobalTransform_;
 
  	/**
- 	 * @brief      Marks all closest descendants that own a Transform Component
- 	 *             as dirty.
+ 	 * @brief      Determines whether the Entity, specified by the pointer,
+ 	 *             contains a transform (implicitly or explicitly) which is
+ 	 *             dirty.
  	 *
- 	 * @param      ptr   The pointer to the Entity whose descendants will be
- 	 *                   marked as dirty
+ 	 * @param      ptr   The pointer to the Entity instance
+ 	 *
+ 	 * @return     True if the specified pointer is dirty, False otherwise.
  	 */
- 	void markDescendantsDirty_(Entity* ptr) {
- 		if (auto children = ptr->getChildren())
- 			for (auto child : *children) {
- 				if (auto transform = child->getComponent<Transform>()) {
- 					transform->isDirty_ = true;
- 					continue;
- 				}
- 				markDescendantsDirty_(child);
- 			}
+ 	bool isDirty_(Entity* ptr) {
+ 		// If we have reached the head Entity then return false
+ 		if (!ptr)
+ 			return false;
+
+ 		// Otherwise if the current Entity has a dirty pointer than return true
+ 		if (auto transform = ptr->getComponent<Transform>())
+ 			if (transform->wasChanged_)
+ 				return true;
+
+ 		// If the current Entity does not have a transform that is dirty, then
+ 		// check its parent
+ 		return isDirty_(ptr->getParent());
  	}
 
  	/**
@@ -461,37 +519,35 @@ export class Transform final : public Component {
  	 * @return     The global transform data.
  	 */
  	TransformData__ getGlobalTransformData_() {
- 		// If the transform has not been dirty, then return the cached data
- 		if (!isDirty_)
+ 		// If the current Transform is not dirty, then simply return our cached
+ 		// value
+ 		if(!isDirty_(entity))
  			return cachedGlobalTransform_;
 
- 		// Otherwise mark all children transforms as dirty
- 		markDescendantsDirty_(entity);
-
- 		// Get and cache the new global transform (recursive)
+ 		// Otherwise recalculate and cache the current global transform
  		cachedGlobalTransform_ = [this]() -> TransformData__ {
- 	 		// Get the parent of the current Entity
- 	 		auto parent = this->entity->getParent();
+	 		// Get the parent of the current Entity
+	 		auto parent = this->entity->getParent();
 
- 	 		for(;;) {
- 	 			// If the current Entity has no parent then return its local matrix
- 	 			if (!parent)
- 	 				return localTransform_;
+	 		for(;;) {
+	 			// If the current Entity has no parent then return its local matrix
+	 			if (!parent)
+	 				return localTransform_;
 
- 	 			// If the parent has a Transform Component then recursively return
- 	 			// it multiplied by the current local matrix
- 		 		if(auto pTransform = parent->getComponent<Transform>())
- 		 			return pTransform->getGlobalTransformData_() * localTransform_;
+	 			// If the parent has a Transform Component then recursively return
+	 			// it multiplied by the current local matrix
+		 		if(auto pTransform = parent->getComponent<Transform>())
+		 			return pTransform->getGlobalTransformData_() * localTransform_;
 
- 		 		// Otherwise get the grandparent
- 	 			parent = parent->getParent();
- 	 		}
+		 		// Otherwise get the grandparent
+	 			parent = parent->getParent();
+	 		}
  		}();
- 		
- 		// Lower the dirty flag
- 		isDirty_ = false;
 
- 		// Finally, return the newly cached global transform 
+ 		// Update the changed flag
+ 		wasChanged_ = false;
+
+ 		// Return the newly cached global transform
  		return cachedGlobalTransform_;
  	}
 

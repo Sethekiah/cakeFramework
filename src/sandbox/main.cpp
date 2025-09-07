@@ -39,6 +39,12 @@ int main(int argc, char const *argv[])
 	a.addComponent<TestComp>();
 
 	Entity b(a);
+	b.addComponent<SpriteRenderer>()
+		->setWindow(window);
+	b.addComponent<Transform>()
+		->setLocalScale({0.25, 0.25})
+		->setLocalPosition({125, 0});
+	b.addComponent<TestComp>();
 
 	Entity c(b);
 	c.addComponent<SpriteRenderer>()
