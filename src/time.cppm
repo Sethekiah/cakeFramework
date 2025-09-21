@@ -5,11 +5,15 @@ module;
 
 export module cakeFramework:time;
 
-// Forward declaration of Time class
-export class Time;
-
-class Time {
+/**
+ * \ingroup System
+ * @brief      Provides the interface for accessing time inforamtion related to
+ *             the game
+ */
+export class Time final {
+	/*! \cond PRIVATE */
 	friend class Internal;
+	/*! \endcond */
 
 	inline static float deltaTime_ = 0;
 	inline static float elapsedTime_ = 0;

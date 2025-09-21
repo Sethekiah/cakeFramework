@@ -5,10 +5,9 @@ import :component;
 import std;
 
 /**
- * @brief      Entity instances are empty by default. Developers can add
- *             Components to the Entity to provide functionality.
- *             
- *             
+ * \ingroup Entity
+ * @brief      Defines an empty object to which, Component instances can be
+ *             added in order to provide functionality.
  */
 class Entity final {
     friend class Internal;
@@ -412,11 +411,11 @@ void destroy(Entity& instance) {
 }
 
 /**
- * @brief      This class exists only to manage the memory allocated for the
+ * @private
+ * @brief      This struct exists only to manage the memory allocated for the
  *             static root Entity instance.
  */
-class Entity_Root_Manager {
- public:
+struct Entity_Root_Manager {
     Entity_Root_Manager() {
         Entity::root_ = new Entity();
     }

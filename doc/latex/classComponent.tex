@@ -1,0 +1,87 @@
+\doxysection{Component Class Reference}
+\hypertarget{classComponent}{}\label{classComponent}\index{Component@{Component}}
+
+
+Provides an abstract interface for all \doxylink{classComponent}{Component} "{}type"{} classes to inherit from. Any Compnent "{}type"{} class can access system functions and be added to \doxylink{classEntity}{Entity} instances.  
+
+
+
+
+Inheritance diagram for Component\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Component\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classComponent_a4427c5c25ebb086bf68e950fdd3c5424}\label{classComponent_a4427c5c25ebb086bf68e950fdd3c5424} 
+virtual void {\bfseries enable} ()
+\begin{DoxyCompactList}\small\item\em Enable the \doxylink{classComponent}{Component}. \end{DoxyCompactList}\item 
+\Hypertarget{classComponent_ab1f762a0ebd268208e929fa99f6243be}\label{classComponent_ab1f762a0ebd268208e929fa99f6243be} 
+virtual void {\bfseries disable} ()
+\begin{DoxyCompactList}\small\item\em Disable the \doxylink{classComponent}{Component}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classComponent_adf0e2494c62fdea82fec4b3de443486c}\label{classComponent_adf0e2494c62fdea82fec4b3de443486c} 
+virtual void {\bfseries awake\+\_\+} (void) final
+\item 
+\Hypertarget{classComponent_ac9ac23357ae35657d83525d57467a010}\label{classComponent_ac9ac23357ae35657d83525d57467a010} 
+virtual void {\bfseries start\+\_\+} (void) final
+\item 
+\Hypertarget{classComponent_a682e20a0a615034dbbe23795ebe8678f}\label{classComponent_a682e20a0a615034dbbe23795ebe8678f} 
+virtual void {\bfseries update\+\_\+} (void) final
+\item 
+\Hypertarget{classComponent_a296cc71213586d1a08ae8f1d18644667}\label{classComponent_a296cc71213586d1a08ae8f1d18644667} 
+virtual void {\bfseries physics\+Update\+\_\+} (void) final
+\item 
+\Hypertarget{classComponent_a8d56d892fc1262e25bdb5d28dea944d8}\label{classComponent_a8d56d892fc1262e25bdb5d28dea944d8} 
+virtual void {\bfseries graphics\+Update\+\_\+} (void) final
+\item 
+\Hypertarget{classComponent_a9935f1eaf33116afb916159d28c5cc8d}\label{classComponent_a9935f1eaf33116afb916159d28c5cc8d} 
+virtual void {\bfseries on\+Game\+End\+\_\+} (void) final
+\item 
+\Hypertarget{classComponent_a3b26fbccb6da790681e5200b281712eb}\label{classComponent_a3b26fbccb6da790681e5200b281712eb} 
+virtual void {\bfseries on\+Destroy\+\_\+} (void) final
+\item 
+\Hypertarget{classComponent_a5843320d74b1cd4561ffd4ba45737d30}\label{classComponent_a5843320d74b1cd4561ffd4ba45737d30} 
+virtual void {\bfseries on\+Disable\+\_\+} (void) final
+\item 
+\Hypertarget{classComponent_a59bfa35af8a9cd58d1ec4e747aecc14f}\label{classComponent_a59bfa35af8a9cd58d1ec4e747aecc14f} 
+virtual void {\bfseries on\+Enable\+\_\+} (void) final
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classComponent_a6acb3f00c9d114d961c8763ede390d2c}\label{classComponent_a6acb3f00c9d114d961c8763ede390d2c} 
+\mbox{\hyperlink{classEntity}{Entity}} \texorpdfstring{$\ast$}{*} {\bfseries entity}
+\item 
+\Hypertarget{classComponent_a4941d470a3a60ec7ad394ccfb538a6df}\label{classComponent_a4941d470a3a60ec7ad394ccfb538a6df} 
+const bool \& {\bfseries did\+Awake} = did\+Awake\+\_\+
+\item 
+\Hypertarget{classComponent_ab30f46b049ad069a1ab0de3c565c1a89}\label{classComponent_ab30f46b049ad069a1ab0de3c565c1a89} 
+const bool \& {\bfseries did\+Start} = did\+Start\+\_\+
+\item 
+\Hypertarget{classComponent_a67035bd02ad27c00f91077fdc414e383}\label{classComponent_a67035bd02ad27c00f91077fdc414e383} 
+const bool \& {\bfseries is\+Enabled} = is\+Enabled\+\_\+
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides an abstract interface for all \doxylink{classComponent}{Component} "{}type"{} classes to inherit from. Any Compnent "{}type"{} class can access system functions and be added to \doxylink{classEntity}{Entity} instances. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+component.\+cppm\end{DoxyCompactItemize}

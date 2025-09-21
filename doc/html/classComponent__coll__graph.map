@@ -1,0 +1,5 @@
+<map id="Component" name="Component">
+<area shape="rect" id="Node000001" title="Provides an abstract interface for all Component &quot;type&quot; classes to inherit from. Any Compnent &quot;type&quot; ..." alt="" coords="5,93,103,119"/>
+<area shape="rect" id="Node000002" href="$classEntity.html" title="Defines an empty object to which, Component instances can be added in order to provide functionality." alt="" coords="24,5,84,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,45,57,93,51,93,51,45"/>
+</map>

@@ -8,10 +8,15 @@ import :component;
 import :transform;
 import :entity;
 
+/**
+ * \ingroup Component
+ * @brief      Defines a viewport for the selected window based on the transform
+ *             of the master Entity instance if the transform exists.
+ */
 export class Camera final : public Component {
  public:
  	/**
- 	 * @brief      Sets the window in which the renderer will target
+ 	 * @brief      Sets the window which the renderer will target
  	 *
  	 * @param      window  The window
  	 *

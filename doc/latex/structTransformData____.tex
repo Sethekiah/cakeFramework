@@ -1,0 +1,93 @@
+\doxysection{Transform\+Data\+\_\+\+\_\+ Struct Reference}
+\hypertarget{structTransformData____}{}\label{structTransformData____}\index{TransformData\_\_@{TransformData\_\_}}
+
+
+\doxylink{structInternal}{Internal} struct used to represent and manipulate transform data. It essentially works as an unrolled affine matrix, where scale, rotation, and position are separated.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Transform \mbox{\hyperlink{structTransformData_____a4a35e1a6fb26979fb1c79bf7a9f31a1e}{get\+SFMLTransform}} ()
+\begin{DoxyCompactList}\small\item\em Gets a sfml transform object representing the transform stored within this struct. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structTransformData____}{Transform\+Data\+\_\+\+\_\+}} \mbox{\hyperlink{structTransformData_____a0683091f9bed1d505234c8fd9c771d6c}{get\+Inverse}} ()
+\begin{DoxyCompactList}\small\item\em Gets the inverse of the current transform data instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structTransformData_____a18b4571487a3e7863006964763e9157b}\label{structTransformData_____a18b4571487a3e7863006964763e9157b} 
+sf\+::\+Vector2f {\bfseries position} \{0, 0\}
+\item 
+\Hypertarget{structTransformData_____a3b93bb926e04e2a70557f6fe330f46d9}\label{structTransformData_____a3b93bb926e04e2a70557f6fe330f46d9} 
+sf\+::\+Vector2f {\bfseries rotation} \{1, 0\}
+\item 
+\Hypertarget{structTransformData_____a82f0a92884e830e26cc35b025f53d415}\label{structTransformData_____a82f0a92884e830e26cc35b025f53d415} 
+sf\+::\+Vector2f {\bfseries scale} \{1, 1\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structTransformData____}{Transform\+Data\+\_\+\+\_\+}} \mbox{\hyperlink{structTransformData_____a6baf66b008b70978b1f41d1faed28b80}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{structTransformData____}{Transform\+Data\+\_\+\+\_\+}} lhs, const \mbox{\hyperlink{structTransformData____}{Transform\+Data\+\_\+\+\_\+}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Combine the transforms of two Transform\+Data structs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structInternal}{Internal} struct used to represent and manipulate transform data. It essentially works as an unrolled affine matrix, where scale, rotation, and position are separated. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structTransformData_____a0683091f9bed1d505234c8fd9c771d6c}\label{structTransformData_____a0683091f9bed1d505234c8fd9c771d6c} 
+\index{TransformData\_\_@{TransformData\_\_}!getInverse@{getInverse}}
+\index{getInverse@{getInverse}!TransformData\_\_@{TransformData\_\_}}
+\doxysubsubsection{\texorpdfstring{getInverse()}{getInverse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTransformData____}{Transform\+Data\+\_\+\+\_\+}} Transform\+Data\+\_\+\+\_\+\+::get\+Inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the inverse of the current transform data instance. 
+
+\begin{DoxyReturn}{Returns}
+The inverse. 
+\end{DoxyReturn}
+\Hypertarget{structTransformData_____a4a35e1a6fb26979fb1c79bf7a9f31a1e}\label{structTransformData_____a4a35e1a6fb26979fb1c79bf7a9f31a1e} 
+\index{TransformData\_\_@{TransformData\_\_}!getSFMLTransform@{getSFMLTransform}}
+\index{getSFMLTransform@{getSFMLTransform}!TransformData\_\_@{TransformData\_\_}}
+\doxysubsubsection{\texorpdfstring{getSFMLTransform()}{getSFMLTransform()}}
+{\footnotesize\ttfamily sf\+::\+Transform Transform\+Data\+\_\+\+\_\+\+::get\+SFMLTransform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a sfml transform object representing the transform stored within this struct. 
+
+\begin{DoxyReturn}{Returns}
+The sfml transform object 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{structTransformData_____a6baf66b008b70978b1f41d1faed28b80}\label{structTransformData_____a6baf66b008b70978b1f41d1faed28b80} 
+\index{TransformData\_\_@{TransformData\_\_}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!TransformData\_\_@{TransformData\_\_}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}}{operator*}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTransformData____}{Transform\+Data\+\_\+\+\_\+}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTransformData____}{Transform\+Data\+\_\+\+\_\+}}}]{lhs,  }\item[{const \mbox{\hyperlink{structTransformData____}{Transform\+Data\+\_\+\+\_\+}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Combine the transforms of two Transform\+Data structs. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lhs} & The left hand side \\
+\hline
+\mbox{\texttt{ in}}  & {\em rhs} & The right hand side\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the multiplication 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+transform.\+cppm\end{DoxyCompactItemize}

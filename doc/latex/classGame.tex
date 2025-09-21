@@ -1,0 +1,50 @@
+\doxysection{Game Class Reference}
+\hypertarget{classGame}{}\label{classGame}\index{Game@{Game}}
+
+
+Provides the interface to control the state of the game.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGame_a0d6ebf09030504b5139df08767393aa6}\label{classGame_a0d6ebf09030504b5139df08767393aa6} 
+static void {\bfseries end} (void)
+\begin{DoxyCompactList}\small\item\em Sends the signal to end the \doxylink{classGame}{Game} at the start of the next frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classGame_aa49f1a4cb89295543495e80e99ff0e06}{loop}} (std\+::function$<$ void()$>$ body)
+\begin{DoxyCompactList}\small\item\em Provides the means of defining the game loop and is only visible to the main function; Will update all \doxylink{classEntity}{Entity} and \doxylink{classComponent}{Component} instances on each frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGame_abf9e6b7e6f15df4b525a2e7705ba3089}\label{classGame_abf9e6b7e6f15df4b525a2e7705ba3089} 
+int {\bfseries main} (int argc, char const \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides the interface to control the state of the game. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGame_aa49f1a4cb89295543495e80e99ff0e06}\label{classGame_aa49f1a4cb89295543495e80e99ff0e06} 
+\index{Game@{Game}!loop@{loop}}
+\index{loop@{loop}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily static void Game\+::loop (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{body }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Provides the means of defining the game loop and is only visible to the main function; Will update all \doxylink{classEntity}{Entity} and \doxylink{classComponent}{Component} instances on each frame. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em body} & The body of the game loop \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+game.\+cppm\end{DoxyCompactItemize}

@@ -6,11 +6,10 @@ export class Component;
 export class Entity;
 
 /**
- * @brief      the Component class is abstract an abstract interface. All
- *             Component "type" classes will define their own version of the
- *             various system calls.
- *             
- *             
+ * \ingroup Component
+ * @brief      Provides an abstract interface for all Component "type" classes
+ *             to inherit from. Any Compnent "type" class can access system
+ *             functions and be added to Entity instances.
  */
 class Component {
 	friend Entity;

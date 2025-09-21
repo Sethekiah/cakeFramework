@@ -1,10 +1,3 @@
-/*
- * TODO:
- * 
- * - Figure out ways to make this code more efficient
- * 	- Dirty flags or something?
- */
-
 // Copyright 2025 Caleb Whitmer
 module;
 
@@ -17,6 +10,7 @@ import :entity;
 import std;
 
 /**
+ * @private
  * @brief      Swap the components of a vector
  *
  * @param[in]  vector  The vector
@@ -32,6 +26,7 @@ sf::Vector2f ComponentSwap__(const sf::Vector2f& vector) {
 }
 
 /**
+ * @private
  * @brief      Internal struct used to represent and manipulate transform data.
  *             It essentially works as an unrolled affine matrix, where scale,
  *             rotation, and position are separated.
@@ -117,6 +112,11 @@ struct TransformData__ {
 	}
 };
 
+/**
+ * \ingroup Component
+ * @brief      Defines the position, rotation, and scale of the master Entity
+ *             instance
+ */
 export class Transform final : public Component {
  public:
  	// Delete origin functions because I do not like them

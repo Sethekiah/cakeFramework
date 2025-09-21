@@ -5,6 +5,10 @@ import :time;
 
 import std;
 
+/**
+ * @private
+ * @brief      The internal state of cakeFramework
+ */
 struct Internal {
 	// Refresh all systems; should be called once per frame
 	static void refresh(void) {

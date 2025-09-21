@@ -1,0 +1,99 @@
+\doxysection{Camera Class Reference}
+\hypertarget{classCamera}{}\label{classCamera}\index{Camera@{Camera}}
+
+
+Defines a viewport for the selected window based on the transform of the master \doxylink{classEntity}{Entity} instance if the transform exists.  
+
+
+
+
+Inheritance diagram for Camera\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classCamera__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Camera\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classCamera__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCamera}{Camera}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCamera_ac0b55b3907d625b46f6db579d3dd5d49}{set\+Window}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Sets the window which the renderer will target. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries enable} ()
+\begin{DoxyCompactList}\small\item\em Enable the \doxylink{classComponent}{Component}. \end{DoxyCompactList}\item 
+virtual void {\bfseries disable} ()
+\begin{DoxyCompactList}\small\item\em Disable the \doxylink{classComponent}{Component}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries awake\+\_\+} (void) final
+\item 
+virtual void {\bfseries start\+\_\+} (void) final
+\item 
+virtual void {\bfseries update\+\_\+} (void) final
+\item 
+virtual void {\bfseries physics\+Update\+\_\+} (void) final
+\item 
+virtual void {\bfseries graphics\+Update\+\_\+} (void) final
+\item 
+virtual void {\bfseries on\+Game\+End\+\_\+} (void) final
+\item 
+virtual void {\bfseries on\+Destroy\+\_\+} (void) final
+\item 
+virtual void {\bfseries on\+Disable\+\_\+} (void) final
+\item 
+virtual void {\bfseries on\+Enable\+\_\+} (void) final
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEntity}{Entity}} \texorpdfstring{$\ast$}{*} {\bfseries entity}
+\item 
+const bool \& {\bfseries did\+Awake} = did\+Awake\+\_\+
+\item 
+const bool \& {\bfseries did\+Start} = did\+Start\+\_\+
+\item 
+const bool \& {\bfseries is\+Enabled} = is\+Enabled\+\_\+
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines a viewport for the selected window based on the transform of the master \doxylink{classEntity}{Entity} instance if the transform exists. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCamera_ac0b55b3907d625b46f6db579d3dd5d49}\label{classCamera_ac0b55b3907d625b46f6db579d3dd5d49} 
+\index{Camera@{Camera}!setWindow@{setWindow}}
+\index{setWindow@{setWindow}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setWindow()}{setWindow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCamera}{Camera}} \texorpdfstring{$\ast$}{*} Camera\+::set\+Window (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the window which the renderer will target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This pointer to allow function chaining 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+camera.\+cppm\end{DoxyCompactItemize}

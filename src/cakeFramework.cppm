@@ -1,3 +1,9 @@
+/** 
+ * \defgroup Entity Entity
+ * \defgroup Component Component
+ * \defgroup System System
+ */
+
 // Copyright 2025 Caleb Whitmer
 export module cakeFramework;
 

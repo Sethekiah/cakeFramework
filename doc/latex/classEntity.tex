@@ -1,0 +1,223 @@
+\doxysection{Entity Class Reference}
+\hypertarget{classEntity}{}\label{classEntity}\index{Entity@{Entity}}
+
+
+Defines an empty object to which, \doxylink{classComponent}{Component} instances can be added in order to provide functionality.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEntity_ab8af282d7a381bb7a4adcea3f41732e0}\label{classEntity_ab8af282d7a381bb7a4adcea3f41732e0} 
+virtual void {\bfseries enable} ()
+\begin{DoxyCompactList}\small\item\em Enable the \doxylink{classEntity}{Entity}. \end{DoxyCompactList}\item 
+\Hypertarget{classEntity_ac3e84e995131f875df7dd4288a759562}\label{classEntity_ac3e84e995131f875df7dd4288a759562} 
+virtual void {\bfseries disable} ()
+\begin{DoxyCompactList}\small\item\em Disable the \doxylink{classEntity}{Entity}. \end{DoxyCompactList}\item 
+\Hypertarget{classEntity_a9665c9a50cbdf79365ead67052a11c63}\label{classEntity_a9665c9a50cbdf79365ead67052a11c63} 
+{\bfseries Entity} (void)
+\begin{DoxyCompactList}\small\item\em Constructs a new instance without a parent (root node) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEntity_a872611a05e522d043c8995f34dbbb48b}{Entity}} (\mbox{\hyperlink{classEntity}{Entity}} \&parent)
+\begin{DoxyCompactList}\small\item\em Constructs a new instance being assigned as a child of another. \end{DoxyCompactList}\item 
+\Hypertarget{classEntity_a6e8406be37172eb7f4e89dd3ba674113}\label{classEntity_a6e8406be37172eb7f4e89dd3ba674113} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Entity} (void)
+\begin{DoxyCompactList}\small\item\em Destroys the object and deallocates all memory stored within. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEntity}{Entity}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEntity_abde47c06f4d8ca0ec3d17ef2616356b2}{get\+Parent}} (void)
+\begin{DoxyCompactList}\small\item\em Get the parent of the current instance. \end{DoxyCompactList}\item 
+\Hypertarget{classEntity_ae1f5672f51c5038f98ccf8b0c9de038b}\label{classEntity_ae1f5672f51c5038f98ccf8b0c9de038b} 
+void {\bfseries remove\+All\+Components} ()
+\begin{DoxyCompactList}\small\item\em Delete all memory allocations stored in the Components map. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEntity_a730a2c70c5699ace2c59a3c67e78a0bf}{add\+Component}} (void)
+\begin{DoxyCompactList}\small\item\em Adds a component to the current instance. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{classEntity_a8f35398f581c0256ce3dccb2c04ef471}{remove\+Component}} (void)
+\begin{DoxyCompactList}\small\item\em Removes a specified component from the current instance. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEntity_aeb7e0197035609b51f83756ff3bceeee}{get\+Component}} (void)
+\begin{DoxyCompactList}\small\item\em Gets a specified \doxylink{classComponent}{Component} from the current instance. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEntity_a7a7c5539653a56d86763663f348b78ef}{get\+Component\+In\+Parent}} (void)
+\begin{DoxyCompactList}\small\item\em Gets a specified \doxylink{classComponent}{Component} from the current instance\textquotesingle{}s parent. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\std\+::optional$<$ std\+::vector$<$ T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classEntity_a4d3ef529faaa852d9835003c08d191fb}{get\+Components\+In\+Children}} (void)
+\begin{DoxyCompactList}\small\item\em Gets all of the Components of a specific type in children of the current instance. \end{DoxyCompactList}\item 
+std\+::optional$<$ std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{classEntity}{Entity}} \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classEntity_ae98a2ae219c02ca0b49eff0fc7835f66}{get\+Children}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the children. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEntity_a84774b806dd321015d1cc653f8542b48}\label{classEntity_a84774b806dd321015d1cc653f8542b48} 
+const bool \& {\bfseries is\+Enabled} = is\+Enabled\+\_\+
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEntity_a8bde6eb35df6b3a9f53810e0bc79fdfd}\label{classEntity_a8bde6eb35df6b3a9f53810e0bc79fdfd} 
+class {\bfseries Internal}
+\item 
+\Hypertarget{classEntity_a2cc95866d933c4f3c68a486600c74b1a}\label{classEntity_a2cc95866d933c4f3c68a486600c74b1a} 
+class {\bfseries Entity\+\_\+\+Root\+\_\+\+Manager}
+\item 
+void \mbox{\hyperlink{classEntity_adc6bc85665677f3f97afa36953ed8471}{destroy}} (\mbox{\hyperlink{classEntity}{Entity}} \&instance)
+\begin{DoxyCompactList}\small\item\em Destroys the given instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines an empty object to which, \doxylink{classComponent}{Component} instances can be added in order to provide functionality. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEntity_a872611a05e522d043c8995f34dbbb48b}\label{classEntity_a872611a05e522d043c8995f34dbbb48b} 
+\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}} \&}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a new instance being assigned as a child of another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent which will "{}adopt"{} the new instance \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEntity_a730a2c70c5699ace2c59a3c67e78a0bf}\label{classEntity_a730a2c70c5699ace2c59a3c67e78a0bf} 
+\index{Entity@{Entity}!addComponent@{addComponent}}
+\index{addComponent@{addComponent}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \texorpdfstring{$\ast$}{*} Entity\+::add\+Component (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a component to the current instance. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the component if it was added, null otherwise 
+\end{DoxyReturn}
+\Hypertarget{classEntity_ae98a2ae219c02ca0b49eff0fc7835f66}\label{classEntity_ae98a2ae219c02ca0b49eff0fc7835f66} 
+\index{Entity@{Entity}!getChildren@{getChildren}}
+\index{getChildren@{getChildren}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getChildren()}{getChildren()}}
+{\footnotesize\ttfamily std\+::optional$<$ std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{classEntity}{Entity}} \texorpdfstring{$\ast$}{*} $>$ $>$ Entity\+::get\+Children (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the children. 
+
+\begin{DoxyReturn}{Returns}
+An optional set, containing each child of the current instance. 
+\end{DoxyReturn}
+\Hypertarget{classEntity_aeb7e0197035609b51f83756ff3bceeee}\label{classEntity_aeb7e0197035609b51f83756ff3bceeee} 
+\index{Entity@{Entity}!getComponent@{getComponent}}
+\index{getComponent@{getComponent}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getComponent()}{getComponent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \texorpdfstring{$\ast$}{*} Entity\+::get\+Component (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a specified \doxylink{classComponent}{Component} from the current instance. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The \doxylink{classComponent}{Component} type\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the component if it exists, null otherwise 
+\end{DoxyReturn}
+\Hypertarget{classEntity_a7a7c5539653a56d86763663f348b78ef}\label{classEntity_a7a7c5539653a56d86763663f348b78ef} 
+\index{Entity@{Entity}!getComponentInParent@{getComponentInParent}}
+\index{getComponentInParent@{getComponentInParent}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getComponentInParent()}{getComponentInParent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \texorpdfstring{$\ast$}{*} Entity\+::get\+Component\+In\+Parent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a specified \doxylink{classComponent}{Component} from the current instance\textquotesingle{}s parent. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The \doxylink{classComponent}{Component} type\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the component if it exists, null otherwise 
+\end{DoxyReturn}
+\Hypertarget{classEntity_a4d3ef529faaa852d9835003c08d191fb}\label{classEntity_a4d3ef529faaa852d9835003c08d191fb} 
+\index{Entity@{Entity}!getComponentsInChildren@{getComponentsInChildren}}
+\index{getComponentsInChildren@{getComponentsInChildren}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getComponentsInChildren()}{getComponentsInChildren()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::optional$<$ std\+::vector$<$ T \texorpdfstring{$\ast$}{*} $>$ $>$ Entity\+::get\+Components\+In\+Children (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets all of the Components of a specific type in children of the current instance. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The \doxylink{classComponent}{Component} type\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The an optional object containing a vector of pointers to the desired \doxylink{classComponent}{Component} type in the children of the current instance. 
+\end{DoxyReturn}
+\Hypertarget{classEntity_abde47c06f4d8ca0ec3d17ef2616356b2}\label{classEntity_abde47c06f4d8ca0ec3d17ef2616356b2} 
+\index{Entity@{Entity}!getParent@{getParent}}
+\index{getParent@{getParent}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getParent()}{getParent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEntity}{Entity}} \texorpdfstring{$\ast$}{*} Entity\+::get\+Parent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the parent of the current instance. 
+
+\begin{DoxyReturn}{Returns}
+The parent if it exists, null otherwise 
+\end{DoxyReturn}
+\Hypertarget{classEntity_a8f35398f581c0256ce3dccb2c04ef471}\label{classEntity_a8f35398f581c0256ce3dccb2c04ef471} 
+\index{Entity@{Entity}!removeComponent@{removeComponent}}
+\index{removeComponent@{removeComponent}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{removeComponent()}{removeComponent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Entity\+::remove\+Component (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes a specified component from the current instance. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classEntity_adc6bc85665677f3f97afa36953ed8471}\label{classEntity_adc6bc85665677f3f97afa36953ed8471} 
+\index{Entity@{Entity}!destroy@{destroy}}
+\index{destroy@{destroy}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{destroy}{destroy}}
+{\footnotesize\ttfamily void destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}} \&}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Destroys the given instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance} & The instance \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+entity.\+cppm\end{DoxyCompactItemize}

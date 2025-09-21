@@ -1,0 +1,487 @@
+\doxysection{Transform Class Reference}
+\hypertarget{classTransform}{}\label{classTransform}\index{Transform@{Transform}}
+
+
+Defines the position, rotation, and scale of the master \doxylink{classEntity}{Entity} instance.  
+
+
+
+
+Inheritance diagram for Transform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classTransform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Transform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classTransform__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classTransform_a73614478de43e8a98e65d5706ea4adc0}\label{classTransform_a73614478de43e8a98e65d5706ea4adc0} 
+sf\+::\+Vector2f {\bfseries get\+Origin} (void)=delete
+\item 
+\Hypertarget{classTransform_ace175da7d235ae9371b107eb1cf74d11}\label{classTransform_ace175da7d235ae9371b107eb1cf74d11} 
+void {\bfseries set\+Origin} (sf\+::\+Vector2f)=delete
+\item 
+sf\+::\+Transform \mbox{\hyperlink{classTransform_a96e45c9bea1429c8aa961daa8d3788ee}{get\+Local\+Transform}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the local transform. \end{DoxyCompactList}\item 
+sf\+::\+Transform \mbox{\hyperlink{classTransform_ad3223032721b84a19ac975d6d430ab35}{get\+Inverse\+Local\+Transform}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the inverse of the local transform. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransform_a7afee7a82acb6e6204607def5f4d5022}{set\+Local\+Position}} (const sf\+::\+Vector2f \&position)
+\begin{DoxyCompactList}\small\item\em Sets the local position. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classTransform_ae30511282b4be0f0c70a7aaec11edff2}{get\+Local\+Position}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the local position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransform_af107e24776b248f753c992cd38dc3ada}{set\+Local\+Scale}} (const sf\+::\+Vector2f \&\mbox{\hyperlink{classTransform_a4bb9604630bb54f5a4d521887a1712df}{scale}})
+\begin{DoxyCompactList}\small\item\em Sets the local scale. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classTransform_ad96a484d0a27c446819c6001e8cd9309}{get\+Local\+Scale}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the local scale. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransform_a0666c812fcffee48770f5fe111547c4f}{set\+Local\+Rotation}} (const sf\+::\+Vector2f \&rotation)
+\begin{DoxyCompactList}\small\item\em Sets the local rotation. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classTransform_af983e5e321467872938e529e21f485bd}{get\+Local\+Rotation}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the local rotation. \end{DoxyCompactList}\item 
+sf\+::\+Transform \mbox{\hyperlink{classTransform_abe2855aa6db691aeec7ab131c21476fb}{get\+Transform}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the global transform. \end{DoxyCompactList}\item 
+sf\+::\+Transform \mbox{\hyperlink{classTransform_adabc4d0365a61a4f85e0c544a76c1e7a}{get\+Inverse\+Transform}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the inverse of the global transform. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransform_a7f01311d70ad2157e029bac925591b44}{set\+Position}} (const sf\+::\+Vector2f \&position)
+\begin{DoxyCompactList}\small\item\em Sets the global position. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classTransform_a5f9271247a88f6de022d24be4b5f08cf}{get\+Position}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the global position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransform_a2469878202881df554c510a6d3801c60}{set\+Scale}} (const sf\+::\+Vector2f \&\mbox{\hyperlink{classTransform_a4bb9604630bb54f5a4d521887a1712df}{scale}})
+\begin{DoxyCompactList}\small\item\em Sets the global scale. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classTransform_a1e0423f3b77176ab94ae3cf0d2a7c689}{get\+Scale}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the global scale. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransform_a853743071ace851e12f7435b4b576275}{set\+Rotation}} (const sf\+::\+Vector2f \&rotation)
+\begin{DoxyCompactList}\small\item\em Sets the global rotation. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classTransform_a0d641dd408b28c46848ea70193244b0d}{get\+Rotation}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the global rotation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransform_abfe1d9f9639642593e4c3ab6a47f7939}{local\+Translate}} (const sf\+::\+Vector2f \&offset)
+\begin{DoxyCompactList}\small\item\em Move the \doxylink{classTransform}{Transform} by some offset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransform_a9dabe4fb65a4c2badfe29c79a396cdd4}{local\+Rotate}} (const sf\+::\+Vector2f \&angle)
+\begin{DoxyCompactList}\small\item\em Rotate the \doxylink{classTransform}{Transform} by some angle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransform_af6ee9cc2bd827641128d3e69c90fc8d2}{local\+Scale}} (const sf\+::\+Vector2f \&\mbox{\hyperlink{classTransform_a4bb9604630bb54f5a4d521887a1712df}{scale}})
+\begin{DoxyCompactList}\small\item\em Scale the transform in global space by some scale multiplier. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransform_aab5c66345b27ca6f24e0edf3e85960e9}{translate}} (const sf\+::\+Vector2f \&offset)
+\begin{DoxyCompactList}\small\item\em Move the \doxylink{classTransform}{Transform} in global space by some offset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransform_aba5363814ae2164b0b99888f4ad818f3}{rotate}} (const sf\+::\+Vector2f \&angle)
+\begin{DoxyCompactList}\small\item\em Rotate the \doxylink{classTransform}{Transform} in global space by some angle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTransform_a4bb9604630bb54f5a4d521887a1712df}{scale}} (const sf\+::\+Vector2f \&scale)
+\begin{DoxyCompactList}\small\item\em Scale the transform in global space by some scale multiplier. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classTransform_a0f70e472b180acd0c82f6aa049eeb033}{forward}} (void)
+\begin{DoxyCompactList}\small\item\em Get the forward vector. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classTransform_ac5a6ea5ddaa1bf958067669972d1d296}{right}} (void)
+\begin{DoxyCompactList}\small\item\em Get the right vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries enable} ()
+\begin{DoxyCompactList}\small\item\em Enable the \doxylink{classComponent}{Component}. \end{DoxyCompactList}\item 
+virtual void {\bfseries disable} ()
+\begin{DoxyCompactList}\small\item\em Disable the \doxylink{classComponent}{Component}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries awake\+\_\+} (void) final
+\item 
+virtual void {\bfseries start\+\_\+} (void) final
+\item 
+virtual void {\bfseries update\+\_\+} (void) final
+\item 
+virtual void {\bfseries physics\+Update\+\_\+} (void) final
+\item 
+virtual void {\bfseries graphics\+Update\+\_\+} (void) final
+\item 
+virtual void {\bfseries on\+Game\+End\+\_\+} (void) final
+\item 
+virtual void {\bfseries on\+Destroy\+\_\+} (void) final
+\item 
+virtual void {\bfseries on\+Disable\+\_\+} (void) final
+\item 
+virtual void {\bfseries on\+Enable\+\_\+} (void) final
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEntity}{Entity}} \texorpdfstring{$\ast$}{*} {\bfseries entity}
+\item 
+const bool \& {\bfseries did\+Awake} = did\+Awake\+\_\+
+\item 
+const bool \& {\bfseries did\+Start} = did\+Start\+\_\+
+\item 
+const bool \& {\bfseries is\+Enabled} = is\+Enabled\+\_\+
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the position, rotation, and scale of the master \doxylink{classEntity}{Entity} instance. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTransform_a0f70e472b180acd0c82f6aa049eeb033}\label{classTransform_a0f70e472b180acd0c82f6aa049eeb033} 
+\index{Transform@{Transform}!forward@{forward}}
+\index{forward@{forward}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Transform\+::forward (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the forward vector. 
+
+\begin{DoxyReturn}{Returns}
+The vector pointing in the same direction as the transform is facing 
+\end{DoxyReturn}
+\Hypertarget{classTransform_ad3223032721b84a19ac975d6d430ab35}\label{classTransform_ad3223032721b84a19ac975d6d430ab35} 
+\index{Transform@{Transform}!getInverseLocalTransform@{getInverseLocalTransform}}
+\index{getInverseLocalTransform@{getInverseLocalTransform}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{getInverseLocalTransform()}{getInverseLocalTransform()}}
+{\footnotesize\ttfamily sf\+::\+Transform Transform\+::get\+Inverse\+Local\+Transform (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the inverse of the local transform. 
+
+\begin{DoxyReturn}{Returns}
+The inverse of the local transform. 
+\end{DoxyReturn}
+\Hypertarget{classTransform_adabc4d0365a61a4f85e0c544a76c1e7a}\label{classTransform_adabc4d0365a61a4f85e0c544a76c1e7a} 
+\index{Transform@{Transform}!getInverseTransform@{getInverseTransform}}
+\index{getInverseTransform@{getInverseTransform}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{getInverseTransform()}{getInverseTransform()}}
+{\footnotesize\ttfamily sf\+::\+Transform Transform\+::get\+Inverse\+Transform (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the inverse of the global transform. 
+
+\begin{DoxyReturn}{Returns}
+The inverse of the global transform. 
+\end{DoxyReturn}
+\Hypertarget{classTransform_ae30511282b4be0f0c70a7aaec11edff2}\label{classTransform_ae30511282b4be0f0c70a7aaec11edff2} 
+\index{Transform@{Transform}!getLocalPosition@{getLocalPosition}}
+\index{getLocalPosition@{getLocalPosition}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{getLocalPosition()}{getLocalPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Transform\+::get\+Local\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the local position. 
+
+\begin{DoxyReturn}{Returns}
+The local position. 
+\end{DoxyReturn}
+\Hypertarget{classTransform_af983e5e321467872938e529e21f485bd}\label{classTransform_af983e5e321467872938e529e21f485bd} 
+\index{Transform@{Transform}!getLocalRotation@{getLocalRotation}}
+\index{getLocalRotation@{getLocalRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{getLocalRotation()}{getLocalRotation()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Transform\+::get\+Local\+Rotation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the local rotation. 
+
+\begin{DoxyReturn}{Returns}
+The local rotation. 
+\end{DoxyReturn}
+\Hypertarget{classTransform_ad96a484d0a27c446819c6001e8cd9309}\label{classTransform_ad96a484d0a27c446819c6001e8cd9309} 
+\index{Transform@{Transform}!getLocalScale@{getLocalScale}}
+\index{getLocalScale@{getLocalScale}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{getLocalScale()}{getLocalScale()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Transform\+::get\+Local\+Scale (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the local scale. 
+
+\begin{DoxyReturn}{Returns}
+The local scale. 
+\end{DoxyReturn}
+\Hypertarget{classTransform_a96e45c9bea1429c8aa961daa8d3788ee}\label{classTransform_a96e45c9bea1429c8aa961daa8d3788ee} 
+\index{Transform@{Transform}!getLocalTransform@{getLocalTransform}}
+\index{getLocalTransform@{getLocalTransform}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{getLocalTransform()}{getLocalTransform()}}
+{\footnotesize\ttfamily sf\+::\+Transform Transform\+::get\+Local\+Transform (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the local transform. 
+
+\begin{DoxyReturn}{Returns}
+The local transform. 
+\end{DoxyReturn}
+\Hypertarget{classTransform_a5f9271247a88f6de022d24be4b5f08cf}\label{classTransform_a5f9271247a88f6de022d24be4b5f08cf} 
+\index{Transform@{Transform}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Transform\+::get\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the global position. 
+
+\begin{DoxyReturn}{Returns}
+The global position. 
+\end{DoxyReturn}
+\Hypertarget{classTransform_a0d641dd408b28c46848ea70193244b0d}\label{classTransform_a0d641dd408b28c46848ea70193244b0d} 
+\index{Transform@{Transform}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Transform\+::get\+Rotation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the global rotation. 
+
+\begin{DoxyReturn}{Returns}
+The global rotation. 
+\end{DoxyReturn}
+\Hypertarget{classTransform_a1e0423f3b77176ab94ae3cf0d2a7c689}\label{classTransform_a1e0423f3b77176ab94ae3cf0d2a7c689} 
+\index{Transform@{Transform}!getScale@{getScale}}
+\index{getScale@{getScale}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Transform\+::get\+Scale (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the global scale. 
+
+\begin{DoxyReturn}{Returns}
+The global scale. 
+\end{DoxyReturn}
+\Hypertarget{classTransform_abe2855aa6db691aeec7ab131c21476fb}\label{classTransform_abe2855aa6db691aeec7ab131c21476fb} 
+\index{Transform@{Transform}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily sf\+::\+Transform Transform\+::get\+Transform (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the global transform. 
+
+\begin{DoxyReturn}{Returns}
+The global transform. 
+\end{DoxyReturn}
+\Hypertarget{classTransform_a9dabe4fb65a4c2badfe29c79a396cdd4}\label{classTransform_a9dabe4fb65a4c2badfe29c79a396cdd4} 
+\index{Transform@{Transform}!localRotate@{localRotate}}
+\index{localRotate@{localRotate}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{localRotate()}{localRotate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} Transform\+::local\+Rotate (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Rotate the \doxylink{classTransform}{Transform} by some angle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em angle} & The angle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This pointer to allow function chaining 
+\end{DoxyReturn}
+\Hypertarget{classTransform_af6ee9cc2bd827641128d3e69c90fc8d2}\label{classTransform_af6ee9cc2bd827641128d3e69c90fc8d2} 
+\index{Transform@{Transform}!localScale@{localScale}}
+\index{localScale@{localScale}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{localScale()}{localScale()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} Transform\+::local\+Scale (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Scale the transform in global space by some scale multiplier. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scale} & The scale\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This pointer to allow function chaining 
+\end{DoxyReturn}
+\Hypertarget{classTransform_abfe1d9f9639642593e4c3ab6a47f7939}\label{classTransform_abfe1d9f9639642593e4c3ab6a47f7939} 
+\index{Transform@{Transform}!localTranslate@{localTranslate}}
+\index{localTranslate@{localTranslate}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{localTranslate()}{localTranslate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} Transform\+::local\+Translate (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Move the \doxylink{classTransform}{Transform} by some offset. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em offset} & The offset\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This pointer to allow function chaining 
+\end{DoxyReturn}
+\Hypertarget{classTransform_ac5a6ea5ddaa1bf958067669972d1d296}\label{classTransform_ac5a6ea5ddaa1bf958067669972d1d296} 
+\index{Transform@{Transform}!right@{right}}
+\index{right@{right}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Transform\+::right (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the right vector. 
+
+\begin{DoxyReturn}{Returns}
+The vector pointing perpendicular to the direction which the transform is facing 
+\end{DoxyReturn}
+\Hypertarget{classTransform_aba5363814ae2164b0b99888f4ad818f3}\label{classTransform_aba5363814ae2164b0b99888f4ad818f3} 
+\index{Transform@{Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} Transform\+::rotate (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Rotate the \doxylink{classTransform}{Transform} in global space by some angle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em angle} & The angle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This pointer to allow function chaining 
+\end{DoxyReturn}
+\Hypertarget{classTransform_a4bb9604630bb54f5a4d521887a1712df}\label{classTransform_a4bb9604630bb54f5a4d521887a1712df} 
+\index{Transform@{Transform}!scale@{scale}}
+\index{scale@{scale}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} Transform\+::scale (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Scale the transform in global space by some scale multiplier. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scale} & The scale multiplier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This pointer to allow function chaining 
+\end{DoxyReturn}
+\Hypertarget{classTransform_a7afee7a82acb6e6204607def5f4d5022}\label{classTransform_a7afee7a82acb6e6204607def5f4d5022} 
+\index{Transform@{Transform}!setLocalPosition@{setLocalPosition}}
+\index{setLocalPosition@{setLocalPosition}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{setLocalPosition()}{setLocalPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} Transform\+::set\+Local\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the local position. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em position} & The position \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTransform_a0666c812fcffee48770f5fe111547c4f}\label{classTransform_a0666c812fcffee48770f5fe111547c4f} 
+\index{Transform@{Transform}!setLocalRotation@{setLocalRotation}}
+\index{setLocalRotation@{setLocalRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{setLocalRotation()}{setLocalRotation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} Transform\+::set\+Local\+Rotation (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the local rotation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rotation} & The rotation \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTransform_af107e24776b248f753c992cd38dc3ada}\label{classTransform_af107e24776b248f753c992cd38dc3ada} 
+\index{Transform@{Transform}!setLocalScale@{setLocalScale}}
+\index{setLocalScale@{setLocalScale}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{setLocalScale()}{setLocalScale()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} Transform\+::set\+Local\+Scale (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the local scale. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scale} & The scale \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTransform_a7f01311d70ad2157e029bac925591b44}\label{classTransform_a7f01311d70ad2157e029bac925591b44} 
+\index{Transform@{Transform}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} Transform\+::set\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the global position. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em position} & The global position \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTransform_a853743071ace851e12f7435b4b576275}\label{classTransform_a853743071ace851e12f7435b4b576275} 
+\index{Transform@{Transform}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} Transform\+::set\+Rotation (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the global rotation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rotation} & The global rotation \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTransform_a2469878202881df554c510a6d3801c60}\label{classTransform_a2469878202881df554c510a6d3801c60} 
+\index{Transform@{Transform}!setScale@{setScale}}
+\index{setScale@{setScale}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} Transform\+::set\+Scale (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the global scale. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scale} & The global scale \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTransform_aab5c66345b27ca6f24e0edf3e85960e9}\label{classTransform_aab5c66345b27ca6f24e0edf3e85960e9} 
+\index{Transform@{Transform}!translate@{translate}}
+\index{translate@{translate}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransform}{Transform}} \texorpdfstring{$\ast$}{*} Transform\+::translate (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Move the \doxylink{classTransform}{Transform} in global space by some offset. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em offset} & The offset\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This pointer to allow function chaining 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+transform.\+cppm\end{DoxyCompactItemize}

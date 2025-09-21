@@ -1,0 +1,3 @@
+OUTPUT_DIRECTORY = ../doc/
+EXTRACT_PRIVATE = NO
+PROJECT_NAME=cakeFramework

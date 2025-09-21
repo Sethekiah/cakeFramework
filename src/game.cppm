@@ -14,16 +14,23 @@ export class Game;
 // private section of the Game class.
 bool gameActive__ = 1;
 
-class Game {
+/**
+ * \ingroup System
+ * @brief      Provides the interface to control the state of the game
+ */
+class Game final {
 	// We friend the main function so that it has exclusive access to the
 	// Game::loop call.
 	friend int main(int argc, char const *argv[]);
 
+ protected:
+
 	/**
-	 * @brief      Defines the main program loop; refreshes the state of the
-	 *             Game on each call; called once per frame
+	 * @brief      Provides the means of defining the game loop and is only
+	 *             visible to the main function; Will update all Entity and
+	 *             Component instances on each frame
 	 *
-	 * @param[in]  body  The body of the loop
+	 * @param[in]  body  The body of the game loop
 	 */
 	static void loop(std::function<void()> body) {
 		while (gameActive__) {
@@ -36,7 +43,7 @@ class Game {
  public:
  	/**
  	 * @brief      Sends the signal to end the Game at the start of the next
- 	 *             frame.
+ 	 *             frame
  	 */
  	static void end(void) {
  		Internal::end();
