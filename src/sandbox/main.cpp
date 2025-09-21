@@ -12,21 +12,6 @@ import cakeFramework;
 import testComp;
 import spriteRenderer;
 
-std::ostream& operator <<(std::ostream& os, const sf::Transform obj) {
-	auto matrix = obj.getMatrix();
-	for (int i = 0; i < 16; i++) {
-		os << matrix[i] << " ";
-		if (i && (i + 1) % 4 == 0)
-			os << "\n";
-	}
-	return os;
-}
-
-std::ostream& operator <<(std::ostream& os, const sf::Vector2f obj) {
-	os << obj.x << ", " << obj.y;
-	return os;
-}
-
 int main(int argc, char const *argv[])
 {
 	sf::RenderWindow window(sf::VideoMode({800, 600}), "cakeFramework", sf::Style::Close);
@@ -35,24 +20,14 @@ int main(int argc, char const *argv[])
 	a.addComponent<SpriteRenderer>()
 		->setWindow(window);
 	a.addComponent<Transform>()
-		->setLocalPosition({200, 200});
-	a.addComponent<TestComp>();
+		->setLocalPosition({0, 0});
 
 	Entity b(a);
-	b.addComponent<SpriteRenderer>()
+	b.addComponent<Camera>()
 		->setWindow(window);
 	b.addComponent<Transform>()
-		->setLocalScale({0.25, 0.25})
-		->setLocalPosition({125, 0});
+		->setLocalPosition({0, 0});
 	b.addComponent<TestComp>();
-
-	Entity c(b);
-	c.addComponent<SpriteRenderer>()
-		->setWindow(window);
-	c.addComponent<Transform>()
-		->setLocalScale({0.25, 0.25})
-		->setLocalPosition({125, 0});
-	c.addComponent<TestComp>();
 
 
 	Game::loop([&](){

@@ -11,8 +11,8 @@ module;
 #include<SFML/Graphics.hpp>
 
 export module cakeFramework:transform;
-import :entity;
 import :component;
+import :entity;
 
 import std;
 

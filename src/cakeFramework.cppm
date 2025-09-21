@@ -8,3 +8,4 @@ export import :entity;
 export import :time;
 export import :game;
 export import :transform;
+export import :camera;
