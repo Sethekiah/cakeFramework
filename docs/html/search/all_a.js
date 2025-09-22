@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['_7eentity_0',['~Entity',['../classEntity.html#a6e8406be37172eb7f4e89dd3ba674113',1,'Entity']]]
+  ['time_0',['Time',['../classTime.html',1,'']]],
+  ['transform_1',['Transform',['../classTransform.html',1,'']]],
+  ['translate_2',['translate',['../classTransform.html#aab5c66345b27ca6f24e0edf3e85960e9',1,'Transform']]]
 ];

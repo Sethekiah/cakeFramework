@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cakeengine_0',['cakeEngine',['../index.html',1,'']]]
+  ['cakeframework_20documentation_0',['cakeFramework Documentation',['../index.html',1,'']]]
 ];

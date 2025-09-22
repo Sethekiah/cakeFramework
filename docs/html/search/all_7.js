@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['removeallcomponents_0',['removeAllComponents',['../classEntity.html#ae1f5672f51c5038f98ccf8b0c9de038b',1,'Entity']]],
-  ['removecomponent_1',['removeComponent',['../classEntity.html#a8f35398f581c0256ce3dccb2c04ef471',1,'Entity']]],
-  ['right_2',['right',['../classTransform.html#ac5a6ea5ddaa1bf958067669972d1d296',1,'Transform']]],
-  ['rotate_3',['rotate',['../classTransform.html#aba5363814ae2164b0b99888f4ad818f3',1,'Transform']]]
+  ['localrotate_0',['localRotate',['../classTransform.html#a9dabe4fb65a4c2badfe29c79a396cdd4',1,'Transform']]],
+  ['localscale_1',['localScale',['../classTransform.html#af6ee9cc2bd827641128d3e69c90fc8d2',1,'Transform']]],
+  ['localtranslate_2',['localTranslate',['../classTransform.html#abfe1d9f9639642593e4c3ab6a47f7939',1,'Transform']]],
+  ['loop_3',['loop',['../classGame.html#aa49f1a4cb89295543495e80e99ff0e06',1,'Game']]]
 ];
