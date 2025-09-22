@@ -4,7 +4,8 @@ var indexSectionsWithContent =
   1: "cegt",
   2: "adefglrst~",
   3: "d",
-  4: "ces"
+  4: "ces",
+  5: "c"
 };
 
 var indexSectionNames =
@@ -13,7 +14,8 @@ var indexSectionNames =
   1: "classes",
   2: "functions",
   3: "related",
-  4: "groups"
+  4: "groups",
+  5: "pages"
 };
 
 var indexSectionLabels =
@@ -22,6 +24,7 @@ var indexSectionLabels =
   1: "Classes",
   2: "Functions",
   3: "Friends",
-  4: "Modules"
+  4: "Modules",
+  5: "Pages"
 };
 
