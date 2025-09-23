@@ -8,5 +8,6 @@ var searchData=
   ['setrotation_5',['setRotation',['../classTransform.html#a853743071ace851e12f7435b4b576275',1,'Transform']]],
   ['setscale_6',['setScale',['../classTransform.html#a2469878202881df554c510a6d3801c60',1,'Transform']]],
   ['setwindow_7',['setWindow',['../classCamera.html#ac0b55b3907d625b46f6db579d3dd5d49',1,'Camera']]],
-  ['system_8',['System',['../group__System.html',1,'']]]
+  ['starter_20code_3a_8',['Example Starter Code:',['../index.html#autotoc_md2',1,'']]],
+  ['system_9',['System',['../group__System.html',1,'']]]
 ];

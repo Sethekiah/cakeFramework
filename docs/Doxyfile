@@ -7,3 +7,5 @@ OUTPUT_DIRECTORY = .
 
 EXTRACT_PRIVATE = NO
 PROJECT_NAME = cakeFramework
+
+HTML_EXTRA_STYLESHEET=./css/stylesheet.css

@@ -8,11 +8,9 @@ CakeFramework is an extension / layer on top of the SFML library for C++. It pro
 <br><br>
 Please see the [repository](https://github.com/Sethekiah/cakeFramework) for installation instructions.
 
-#### Example
+#### Example Starter Code:
 
 ---
-
-Starter Code:
 
 ```
 import cakeFramework;
