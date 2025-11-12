@@ -1,0 +1,13 @@
+{
+    packages = {
+        "/home/caleb/.xmake/packages/n/ninja/v1.13.1/e7cc4735aeb048e6870171a23c4ee800",
+        "/home/caleb/.xmake/packages/u/util-macros/1.20.0/2c9e08c53c11472d9897a902ab6ac668",
+        "/home/caleb/.xmake/packages/x/xtrans/1.6.0/588d85a9c99148b8ae87dee11b39ab40",
+        "/home/caleb/.xmake/packages/p/python/3.13.2/83a6d196f1bd438291d638aeea7d55c6",
+        "/home/caleb/.xmake/packages/l/libpthread-stubs/0.5/0be5660a03f041e28292dd33a261ed6a",
+        "/home/caleb/.xmake/packages/a/autotools/latest/725e51fe81b74141ade9efbd3ccaf900",
+        "/home/caleb/.xmake/packages/g/gperf/3.2.1/efebb5f5e634400e95353d8b19c09308",
+        "/home/caleb/.xmake/packages/e/eudev/v3.2.14/1bc6944d9bd545838557d9f0afb61f21",
+        "/home/caleb/.xmake/packages/s/sfml/3.0.1/e808038ea783476dac7f360c26f52755"
+    }
+}

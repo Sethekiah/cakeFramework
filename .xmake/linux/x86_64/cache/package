@@ -1,0 +1,257 @@
+{
+    sfml = {
+        components = {
+            graphics = {
+                links = "sfml-graphics-s"
+            },
+            network = {
+                links = "sfml-network-s"
+            },
+            window = {
+                links = "sfml-window-s",
+                syslinks = "dl"
+            },
+            system = {
+                links = "sfml-system-s",
+                syslinks = {
+                    "rt",
+                    "pthread"
+                }
+            },
+            __base = {
+                defines = {
+                    "SFML_STATIC",
+                    "WITH_GZFILEOP"
+                },
+                sysincludedirs = {
+                    "/home/caleb/.xmake/packages/s/sfml/3.0.1/e808038ea783476dac7f360c26f52755/include",
+                    "/usr/include/freetype2",
+                    "/usr/include/libpng16",
+                    "/home/caleb/.xmake/packages/e/eudev/v3.2.14/1bc6944d9bd545838557d9f0afb61f21/include"
+                },
+                links = {
+                    "freetype",
+                    "z",
+                    "Xcursor",
+                    "Xrandr",
+                    "Xrender",
+                    "X11",
+                    "udev",
+                    "Xi",
+                    "Xext",
+                    "Xfixes",
+                    "X11-xcb",
+                    "xcb",
+                    "xcb-composite",
+                    "xcb-damage",
+                    "xcb-dbe",
+                    "xcb-dpms",
+                    "xcb-dri2",
+                    "xcb-dri3",
+                    "xcb-glx",
+                    "xcb-present",
+                    "xcb-randr",
+                    "xcb-record",
+                    "xcb-render",
+                    "xcb-res",
+                    "xcb-screensaver",
+                    "xcb-shape",
+                    "xcb-shm",
+                    "xcb-sync",
+                    "xcb-xf86dri",
+                    "xcb-xfixes",
+                    "xcb-xinerama",
+                    "xcb-xinput",
+                    "xcb-xkb",
+                    "xcb-xtest",
+                    "xcb-xv",
+                    "xcb-xvmc",
+                    "Xau",
+                    "Xdmcp",
+                    "OpenGL",
+                    "GLX",
+                    "FLAC++",
+                    "FLAC",
+                    "vorbisfile",
+                    "vorbisenc",
+                    "vorbis",
+                    "ogg"
+                },
+                linkdirs = {
+                    "/home/caleb/.xmake/packages/s/sfml/3.0.1/e808038ea783476dac7f360c26f52755/lib",
+                    "/home/caleb/.xmake/packages/e/eudev/v3.2.14/1bc6944d9bd545838557d9f0afb61f21/lib"
+                }
+            },
+            audio = {
+                links = "sfml-audio-s"
+            }
+        },
+        installdir = "/home/caleb/.xmake/packages/s/sfml/3.0.1/e808038ea783476dac7f360c26f52755",
+        static = true,
+        linkdirs = {
+            "/home/caleb/.xmake/packages/s/sfml/3.0.1/e808038ea783476dac7f360c26f52755/lib",
+            "/home/caleb/.xmake/packages/e/eudev/v3.2.14/1bc6944d9bd545838557d9f0afb61f21/lib"
+        },
+        libfiles = {
+            "/home/caleb/.xmake/packages/s/sfml/3.0.1/e808038ea783476dac7f360c26f52755/lib/libsfml-graphics-s.a",
+            "/home/caleb/.xmake/packages/s/sfml/3.0.1/e808038ea783476dac7f360c26f52755/lib/libsfml-window-s.a",
+            "/home/caleb/.xmake/packages/s/sfml/3.0.1/e808038ea783476dac7f360c26f52755/lib/libsfml-audio-s.a",
+            "/home/caleb/.xmake/packages/s/sfml/3.0.1/e808038ea783476dac7f360c26f52755/lib/libsfml-network-s.a",
+            "/home/caleb/.xmake/packages/s/sfml/3.0.1/e808038ea783476dac7f360c26f52755/lib/libsfml-system-s.a",
+            "/usr/lib/libfreetype.so",
+            "/usr/lib/libXcursor.so",
+            "/usr/lib/libXrandr.so",
+            "/usr/lib/libXrender.so",
+            "/usr/lib/libX11.so",
+            "/home/caleb/.xmake/packages/e/eudev/v3.2.14/1bc6944d9bd545838557d9f0afb61f21/lib/libudev.a",
+            "/usr/lib/libXi.so",
+            "/usr/lib/libXext.so",
+            "/usr/lib/libXfixes.so",
+            "/usr/lib/libX11-xcb.so",
+            "/usr/lib/libxcb-composite.so",
+            "/usr/lib/libxcb-damage.so",
+            "/usr/lib/libxcb-dbe.so",
+            "/usr/lib/libxcb-dpms.so",
+            "/usr/lib/libxcb-dri2.so",
+            "/usr/lib/libxcb-dri3.so",
+            "/usr/lib/libxcb-glx.so",
+            "/usr/lib/libxcb-present.so",
+            "/usr/lib/libxcb-randr.so",
+            "/usr/lib/libxcb-record.so",
+            "/usr/lib/libxcb-render.so",
+            "/usr/lib/libxcb-res.so",
+            "/usr/lib/libxcb-screensaver.so",
+            "/usr/lib/libxcb-shape.so",
+            "/usr/lib/libxcb-shm.so",
+            "/usr/lib/libxcb-sync.so",
+            "/usr/lib/libxcb-xf86dri.so",
+            "/usr/lib/libxcb-xfixes.so",
+            "/usr/lib/libxcb-xinerama.so",
+            "/usr/lib/libxcb-xinput.so",
+            "/usr/lib/libxcb-xkb.so",
+            "/usr/lib/libxcb-xtest.so",
+            "/usr/lib/libxcb-xv.so",
+            "/usr/lib/libxcb-xvmc.so",
+            "/usr/lib/libxcb.so",
+            "/usr/lib/libXau.so",
+            "/usr/lib/libXdmcp.so",
+            "/usr/lib/libOpenGL.so",
+            "/usr/lib/libGLX.so",
+            "/usr/lib/libFLAC++.so",
+            "/usr/lib/libFLAC.so",
+            "/usr/lib/libvorbisfile.so",
+            "/usr/lib/libogg.so"
+        },
+        version = "3.0.1",
+        __components_deps = {
+            graphics = {
+                "window",
+                "system"
+            },
+            network = "system",
+            window = "system",
+            audio = "system"
+        },
+        defines = {
+            "SFML_STATIC",
+            "WITH_GZFILEOP"
+        },
+        links = {
+            "sfml-graphics-s",
+            "sfml-window-s",
+            "sfml-audio-s",
+            "sfml-network-s",
+            "sfml-system-s",
+            "freetype",
+            "z",
+            "Xcursor",
+            "Xrandr",
+            "Xrender",
+            "X11",
+            "udev",
+            "Xi",
+            "Xext",
+            "Xfixes",
+            "X11-xcb",
+            "xcb",
+            "xcb-composite",
+            "xcb-damage",
+            "xcb-dbe",
+            "xcb-dpms",
+            "xcb-dri2",
+            "xcb-dri3",
+            "xcb-glx",
+            "xcb-present",
+            "xcb-randr",
+            "xcb-record",
+            "xcb-render",
+            "xcb-res",
+            "xcb-screensaver",
+            "xcb-shape",
+            "xcb-shm",
+            "xcb-sync",
+            "xcb-xf86dri",
+            "xcb-xfixes",
+            "xcb-xinerama",
+            "xcb-xinput",
+            "xcb-xkb",
+            "xcb-xtest",
+            "xcb-xv",
+            "xcb-xvmc",
+            "Xau",
+            "Xdmcp",
+            "OpenGL",
+            "GLX",
+            "FLAC++",
+            "FLAC",
+            "vorbisfile",
+            "vorbisenc",
+            "vorbis",
+            "ogg"
+        },
+        __requirestr = "sfml 3.0.1",
+        envs = {
+            PYTHONPATH = {
+                "/home/caleb/.xmake/packages/p/python/3.13.2/83a6d196f1bd438291d638aeea7d55c6/lib/python3.13/site-packages"
+            },
+            PATH = {
+                "/home/caleb/.xmake/packages/n/ninja/v1.13.1/e7cc4735aeb048e6870171a23c4ee800/bin",
+                "/home/caleb/.xmake/packages/c/cmake/4.0.3/b686e3b7911246e2bfa1b52ae27762fe/bin",
+                "/home/caleb/.xmake/packages/p/pkg-config/0.29.2/a0aba256d7674c1bbee15f0ee1534e92/bin",
+                "/home/caleb/.xmake/packages/p/pkg-config/0.29.2/a0aba256d7674c1bbee15f0ee1534e92/bin",
+                "/home/caleb/.xmake/packages/p/python/3.13.2/83a6d196f1bd438291d638aeea7d55c6/bin",
+                "/home/caleb/.xmake/packages/p/python/3.13.2/83a6d196f1bd438291d638aeea7d55c6/bin",
+                "/home/caleb/.xmake/packages/p/python/3.13.2/83a6d196f1bd438291d638aeea7d55c6/Scripts",
+                "/home/caleb/.xmake/packages/m/m4/1.4.19/8b7c7260096844c1a8b1c8d773e64b3d/bin",
+                "/home/caleb/.xmake/packages/a/autoconf/2.72/acf1540df7454fb895001231995955f2/bin",
+                "/home/caleb/.xmake/packages/a/automake/1.17/023583104f8e4bd8aa209b66cbeb4bee/bin",
+                "/home/caleb/.xmake/packages/l/libtool/2.6.0/e0bdba70c39545bb9c3dcc8050ee49d5/bin",
+                "/home/caleb/.xmake/packages/a/autotools/latest/725e51fe81b74141ade9efbd3ccaf900/bin",
+                "/home/caleb/.xmake/packages/g/gperf/3.2.1/efebb5f5e634400e95353d8b19c09308/bin"
+            },
+            LD_LIBRARY_PATH = {
+                "/home/caleb/.xmake/packages/l/libx11/1.8.12/00034d83f97d4ee5b6d5cb23cc935fd9/lib"
+            }
+        },
+        license = "zlib",
+        __enabled = true,
+        __components_orderlist = {
+            "graphics",
+            "window",
+            "audio",
+            "network",
+            "system"
+        },
+        sysincludedirs = {
+            "/home/caleb/.xmake/packages/s/sfml/3.0.1/e808038ea783476dac7f360c26f52755/include",
+            "/usr/include/freetype2",
+            "/usr/include/libpng16",
+            "/home/caleb/.xmake/packages/e/eudev/v3.2.14/1bc6944d9bd545838557d9f0afb61f21/include"
+        },
+        syslinks = {
+            "dl",
+            "rt",
+            "pthread"
+        }
+    }
+}
