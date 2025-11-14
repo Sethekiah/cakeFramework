@@ -9,50 +9,59 @@ import :transform;
 import :entity;
 
 /**
- * \ingroup Component
- * @brief      Defines a viewport for the selected window based on the transform
- *             of the master Entity instance if the transform exists.
+ * @ingroup    Component
+ *
+ * @brief      Defines a view-port for
+ *             the selected window based
+ *             on the transform of the
+ *             master Entity instance if
+ *             the transform exists.
  */
 export class Camera final : public Component {
  public:
- 	/**
- 	 * @brief      Sets the window which the renderer will target
- 	 *
- 	 * @param      window  The window
- 	 *
- 	 * @return     This pointer to allow function chaining
- 	 */
- 	Camera* setWindow(sf::RenderWindow& window) {
- 		window_ = &window;
- 		return this;
- 	}
+  /**
+   * @brief      Sets the window which
+   *             the renderer will
+   *             target
+   *
+   * @param      window  The window
+   *
+   * @return     This pointer to allow
+   *             function chaining
+   */
+  Camera*                               //
+  setWindow(sf::RenderWindow& window) { //
+    window_ = &window;                  // Set the render window and return
+    return this;                        // 'this' to allow for function
+                                        // chaining.
+  }                                     //
 
  private:
- 	sf::RenderWindow* window_ = nullptr;
- 	sf::View view_;
+  sf::RenderWindow* window_ = nullptr;
+  sf::View view_;
 
- 	void awake() {
- 		// Construct the view
- 		view_ = sf::View();
- 	}
-
-	void graphicsUpdate() {
-		// Break if the window has not been specified
-		if (!window_)
-			return;
-
-		// Set the size of the view to the size of the window
-		view_.setSize(static_cast<sf::Vector2f>(window_->getSize()));
-
-		// If there is a transform component available
-		if(auto transform = entity->getComponent<Transform>()) {
-			// Then chabge the transform of the view based on that
-			view_.setCenter(transform->getPosition());
-			view_.setRotation(transform->getRotation().angle());
-		}
-
-		// Set the view of the window based on the new view which was calculated
-		// by this componnent.
-		window_->setView(view_);
-	}
+  void awake() {                        //
+    view_ = sf::View();                 // Construct the view.
+  }                                     //
+                                        //
+  void graphicsUpdate() {               //
+    if (!window_) return;               // Break if the window has not been
+                                        // specified.
+                                        //
+    view_.setSize(                      // Set the size of the view to the size
+      static_cast<sf::Vector2f>(window_->getSize()));
+                                        // of the window.
+                                        //
+    if(auto transform =                 // If there is a transform Component 
+      entity->getComponent<Transform>()) {
+      view_.setCenter(                  // available, then change the transform 
+        transform->getPosition());      // of the view based on the Transform of
+      view_.setRotation(                // the Entity.
+        transform->getRotation().angle());
+    }                                   //
+                                        //
+    window_->setView(view_);            // Set the view of the window based
+                                        // on the new view which was
+                                        // calculated by this Component.
+  }
 }; 
