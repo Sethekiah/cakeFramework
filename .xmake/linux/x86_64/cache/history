@@ -4,7 +4,6 @@
         "xmake ",
         "xmake ",
         "xmake ",
-        "xmake ",
         "xmake run -q",
         "xmake ",
         "xmake ",
@@ -64,6 +63,7 @@
         "xmake lua /usr/share/xmake/modules/private/utils/statistics.lua",
         "xmake lua /usr/share/xmake/actions/build/cleaner.lua",
         "xmake run -q",
+        "xmake clean",
         "xmake clean"
     }
 }

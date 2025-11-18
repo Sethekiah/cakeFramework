@@ -8,11 +8,11 @@ Defines an empty object to which, \doxylink{classComponent}{Component} instances
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classEntity_ab8af282d7a381bb7a4adcea3f41732e0}\label{classEntity_ab8af282d7a381bb7a4adcea3f41732e0} 
-virtual void {\bfseries enable} ()
+\Hypertarget{classEntity_ad7098f7a0d64fb9a3ec25be68359d6b0}\label{classEntity_ad7098f7a0d64fb9a3ec25be68359d6b0} 
+virtual void {\bfseries enable} (void)
 \begin{DoxyCompactList}\small\item\em Enable the \doxylink{classEntity}{Entity}. \end{DoxyCompactList}\item 
-\Hypertarget{classEntity_ac3e84e995131f875df7dd4288a759562}\label{classEntity_ac3e84e995131f875df7dd4288a759562} 
-virtual void {\bfseries disable} ()
+\Hypertarget{classEntity_a95ef679ed0bd4845e38e01f7ce651f10}\label{classEntity_a95ef679ed0bd4845e38e01f7ce651f10} 
+virtual void {\bfseries disable} (void)
 \begin{DoxyCompactList}\small\item\em Disable the \doxylink{classEntity}{Entity}. \end{DoxyCompactList}\item 
 \Hypertarget{classEntity_a9665c9a50cbdf79365ead67052a11c63}\label{classEntity_a9665c9a50cbdf79365ead67052a11c63} 
 {\bfseries Entity} (void)
@@ -21,11 +21,11 @@ virtual void {\bfseries disable} ()
 \begin{DoxyCompactList}\small\item\em Constructs a new instance being assigned as a child of another. \end{DoxyCompactList}\item 
 \Hypertarget{classEntity_a6e8406be37172eb7f4e89dd3ba674113}\label{classEntity_a6e8406be37172eb7f4e89dd3ba674113} 
 {\bfseries \texorpdfstring{$\sim$}{\string~}\+Entity} (void)
-\begin{DoxyCompactList}\small\item\em Destroys the object and deallocates all memory stored within. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Destroys the object and de-\/allocates all memory stored within. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classEntity}{Entity}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEntity_abde47c06f4d8ca0ec3d17ef2616356b2}{get\+Parent}} (void)
 \begin{DoxyCompactList}\small\item\em Get the parent of the current instance. \end{DoxyCompactList}\item 
-\Hypertarget{classEntity_ae1f5672f51c5038f98ccf8b0c9de038b}\label{classEntity_ae1f5672f51c5038f98ccf8b0c9de038b} 
-void {\bfseries remove\+All\+Components} ()
+\Hypertarget{classEntity_abbd5ec8d969cfa3ebba3faca4bf81f55}\label{classEntity_abbd5ec8d969cfa3ebba3faca4bf81f55} 
+void {\bfseries remove\+All\+Components} (void)
 \begin{DoxyCompactList}\small\item\em Delete all memory allocations stored in the Components map. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEntity_a730a2c70c5699ace2c59a3c67e78a0bf}{add\+Component}} (void)
 \begin{DoxyCompactList}\small\item\em Adds a component to the current instance. \end{DoxyCompactList}\item 
@@ -39,6 +39,12 @@ void {\bfseries remove\+All\+Components} ()
 \begin{DoxyCompactList}\small\item\em Gets all of the Components of a specific type in children of the current instance. \end{DoxyCompactList}\item 
 std\+::optional$<$ std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{classEntity}{Entity}} \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classEntity_ae98a2ae219c02ca0b49eff0fc7835f66}{get\+Children}} (void)
 \begin{DoxyCompactList}\small\item\em Gets the children. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEntity_a17691e5a5afd1d2d2b7fbba1081823cb}\label{classEntity_a17691e5a5afd1d2d2b7fbba1081823cb} 
+static void {\bfseries update\+All} (void)
+\begin{DoxyCompactList}\small\item\em Update all \doxylink{classEntity}{Entity} instances, starting at the root \doxylink{classEntity}{Entity} and recursively propagating through each generation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -47,9 +53,6 @@ const bool \& {\bfseries is\+Enabled} = is\+Enabled\+\_\+
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
-\item 
-\Hypertarget{classEntity_a8bde6eb35df6b3a9f53810e0bc79fdfd}\label{classEntity_a8bde6eb35df6b3a9f53810e0bc79fdfd} 
-class {\bfseries Internal}
 \item 
 \Hypertarget{classEntity_a2cc95866d933c4f3c68a486600c74b1a}\label{classEntity_a2cc95866d933c4f3c68a486600c74b1a} 
 class {\bfseries Entity\+\_\+\+Root\+\_\+\+Manager}
@@ -220,4 +223,4 @@ Destroys the given instance.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/seth/\+Documents/\+Projects/cake\+Framework/src/entity.\+cppm\end{DoxyCompactItemize}
+/home/caleb/\+Development/cake\+Framework/src/entity.\+cppm\end{DoxyCompactItemize}

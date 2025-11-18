@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7eentity_0',['~Entity',['../classEntity.html#a6e8406be37172eb7f4e89dd3ba674113',1,'Entity']]]
+  ['updateall_0',['updateAll',['../classEntity.html#a17691e5a5afd1d2d2b7fbba1081823cb',1,'Entity']]]
 ];
