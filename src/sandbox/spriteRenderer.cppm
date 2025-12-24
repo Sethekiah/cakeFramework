@@ -31,7 +31,7 @@ export class SpriteRenderer final : public Component {
  		rect_.setOrigin({50, 50});
 
  		// Default color of magenta (no material)
- 		rect_.setFillColor(sf::Color::Magenta);
+ 		rect_.setFillColor(sf::Color::Red);
  	}
 
  	void graphicsUpdate() {

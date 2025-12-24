@@ -11,6 +11,7 @@ import std;
 import cakeFramework;
 import testComp;
 import spriteRenderer;
+import rectCollider;
 
 int main(int argc, char const *argv[])
 {
@@ -18,16 +19,21 @@ int main(int argc, char const *argv[])
 
   Entity a;
   a.addComponent<SpriteRenderer>()
-    ->setWindow(window);
+    ->setWindow(window)
+  ;
   a.addComponent<Transform>()
-    ->setLocalPosition({0, 0});
+    ->setLocalPosition({0, 0})
+    // ->setLocalScale({2.f, 1.f})
+  ;
+  a.addComponent<TestComp>();
+  a.addComponent<RectCollider>()
+    ->renderWindow = &window;
 
-  Entity b(a);
-  b.addComponent<Camera>()
+  Entity camera;
+  camera.addComponent<Camera>()
     ->setWindow(window);
-  b.addComponent<Transform>()
+  camera.addComponent<Transform>()
     ->setLocalPosition({0, 0});
-  b.addComponent<TestComp>();
 
 
   for (;;) {
@@ -41,11 +47,10 @@ int main(int argc, char const *argv[])
     Entity::updateAll();
 
     window.display();                   // Display the buffer first, then
-                                        // clear it. Render draw calls are
+    window.clear();                     // clear it. Render draw calls are
                                         // made when the graphics update
                                         // system is run at the start of
                                         // each game loop.
-    window.clear();
   }
 
   return 0;

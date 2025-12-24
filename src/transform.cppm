@@ -43,7 +43,7 @@ sf::Vector2f ComponentSwap__(const sf::Vector2f& vector) {
 struct TransformData__ {
   sf::Vector2f position  {0, 0};
   sf::Vector2f rotation  {1, 0};
-  sf::Vector2f scale    {1, 1};
+  sf::Vector2f scale     {1, 1};
 
   /**
    * @brief      Gets a SFML transform

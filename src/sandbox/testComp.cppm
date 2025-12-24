@@ -8,11 +8,15 @@ import cakeFramework;
 import std;
 
 export class TestComp final : public Component {
+	void start() {
+		if (auto transform = entity->getComponent<Transform>())
+			transform->setScale({4.f, .5f});
+	}
+
 	void update() {
-		// std::cout << 1.f/Time::deltaTime << std::endl;
 		if (auto transform = entity->getComponent<Transform>()) {
-			transform->translate(transform->forward() * Time::deltaTime * 100.f);
-			transform->rotate(sf::Vector2f(1.f, sf::degrees(0.1f)));	
+			transform->rotate(sf::Vector2f(1.f, sf::degrees(0.005f)));	
+			transform->translate(transform->forward() * 10.f * Time::deltaTime);
 		}
 	}
 
